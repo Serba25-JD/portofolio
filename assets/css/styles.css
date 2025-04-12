@@ -34,6 +34,8 @@ header {
     top: 0;
     left: 0;
     width: 30%;
+    place-content: center;
+    padding: 2rem;
 }
 
 header li a {
@@ -41,7 +43,15 @@ header li a {
 }
 
 main {
-    margin-left: 27rem;
+    margin-left: 40rem;
     background-color: var(--p2);
     height: 100vh;
+}
+
+#project {
+    margin-top: 20rem;
+}
+
+#contact {
+    margin-top: 1000000rem;
 }
