@@ -68,6 +68,7 @@ body {
     "header footer"
     ;
     scroll-behavior: smooth;
+    max-width: 100%;
 }
 
 /* Header Styles */
@@ -249,21 +250,21 @@ main {
     text-align: center;
 }
 
-.container .content .skill .row {
+.container .content .skill .row-skill {
     background-color: var(--primary);
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0.6rem 0 1rem rgba(0, 0, 0, 0.5);
 }
 
-.container .content .skill .row img {
+.container .content .skill .row-skill img {
     width: 30%;
     height: auto;
     transition: transform 0.3s;
     cursor: pointer;
 }
 
-.container .content .skill .row img:hover {
+.container .content .skill .row-skill img:hover {
     transform: scale(1.05);
     animation: shake 0.5s ease-in-out;
 }
@@ -331,14 +332,14 @@ main {
 }
 
 
-.container .project-self .row {
+.container .project-self .row-self {
     margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     box-shadow: 0.6rem 0 1rem rgba(0, 0, 0, 0.5);
 }
 
-.container .project-self .row img {
+.container .project-self .row-self img {
     width: 100%;
     height: auto;
 }
@@ -567,7 +568,7 @@ footer {
     }
     header {
         grid-template-columns: 1fr 1fr 1fr;
-        height: 20vh;
+        height: 40vh;
         width: 100%;
         transform: translateY(-100%);
         transition: 1s;
@@ -582,7 +583,7 @@ footer {
         transform: translateX(0);
     }
     main {
-        margin: 0;
+        margin-left: 0;
     }
     .container .hero {
         text-align: center;
@@ -611,6 +612,59 @@ footer {
     html {
         font-size: 80%;
     }
+    body {
+        grid-template-columns: 1fr;
+    }
+    #menu {
+        display: inline-block;
+        cursor: pointer;
+    }
+    #menu-close {
+        display: inline-block;
+        cursor: pointer;
+    }
+    header {
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 60vh;
+        width: 100%;
+        transform: translateY(-100%);
+        transition: 1s;
+        animation: none;
+        place-content: center;
+        place-items: center;
+    }
+    header .social ul {
+        grid-template-columns: 1fr;
+    }
+    header.active {
+        transform: translateX(0);
+    }
+    main {
+        margin-left: 0;
+    }
+    .container {
+        margin-top: 3rem;
+    }
+    .container .hero {
+        text-align: center;
+    }
+    .container .content .card {
+        grid-template-columns: 1fr;
+    }
+    .container .contact .content #row-1 {
+        border-left: 0.2rem solid var(--text);
+        border-right: 0.2rem solid var(--text);
+    }
+    
+    .container .contact .content #row-2 {
+        border-left: 0.2rem solid var(--text);
+        border-right: 0.2rem solid var(--text);
+    }
+    
+    .container .contact .content #row-3 {
+        border-left: 0.2rem solid var(--text);
+        border-right: 0.2rem solid var(--text);
+    }
 }
 
 /* Small Tablets (Portrait) */
@@ -631,7 +685,7 @@ footer {
     }
     header {
         grid-template-columns: 1fr 1fr 1fr;
-        height: 20vh;
+        height: 30vh;
         width: 100%;
         transform: translateY(-100%);
         transition: 1s;
@@ -656,11 +710,9 @@ footer {
     }
     .container .contact .content #row-1 {
         border-left: 0.2rem solid var(--text);
-        border-right: 0.2rem solid var(--text);
     }
     
     .container .contact .content #row-2 {
-        border-left: 0.2rem solid var(--text);
         border-right: 0.2rem solid var(--text);
     }
     
@@ -674,6 +726,21 @@ footer {
 @media (min-width: 769px) and (max-width: 1024px) {
     html {
         font-size: 100%;
+    }
+    body {
+        grid-template-columns: 250px 1fr;
+    }
+    header {
+        width: 20%;
+    }
+    main {
+        margin-left: 1rem;
+    }
+    .container .contact .content #row-1 {
+        border-right: 0.2rem solid var(--text);
+    }
+    .container .contact .content #row-2 {
+        border-right: 0.2rem solid var(--text);
     }
 }
 
@@ -689,7 +756,7 @@ footer {
         width: 20%;
     }
     main {
-        margin-left: 0;
+        margin-left: 4rem;
     }
     .container .contact .content #row-2 {
         border-right: 0.2rem solid var(--text);
@@ -700,6 +767,12 @@ footer {
 @media (min-width: 1281px) {
     html {
         font-size: 100%;
+    }
+    body {
+        grid-template-columns: 250px 1fr;
+    }
+    main {
+        margin-left: 1rem;
     }
 }
 
