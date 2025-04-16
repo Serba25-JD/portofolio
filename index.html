@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header>
+    <header id="navbar">
         <a href="index.html"> <img src="image/Logo-Header.png" alt="Logo" /> </a>
         <nav>
             <ul>
@@ -24,29 +24,32 @@
                 <li><a href="#about"> Tentang </a></li>
                 <li><a href="#project"> Proyek </a></li>
                 <li><a href="#contact"> Kontak </a></li>
+                <li> <i data-feather="x" id="menu-close"></i> </li>
             </ul>
         </nav>
-        <article class="social">
+        <aside class="social">
             <ul>
                 <li><a href="https://www.instagram.com/je.onlyone_" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-instagram.svg" alt="instagram-logo" /> </a></li>
-                <li><a href="https://discord.com/users/jeremi_salvatores" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-discord.svg" alt="instagram-logo" /> </a></li>
-                <li><a href="https://github.com/Serba25-JD" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-github.svg" alt="instagram-logo" /> </a></li>
+                <li><a href="https://discord.com/users/jeremi_salvatores" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-discord.svg" alt="discord-logo" /> </a></li>
+                <li><a href="https://github.com/Serba25-JD" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-github.svg" alt="github-logo" /> </a></li>
             </ul>
-        </article>
+        </aside>
     </header>
     <main>
+
+        <i data-feather="menu" id="menu"></i>
 
         <section class="container" id="home">
             <article class="hero" alt="Photo by Leone Venter on Unsplash">
                 <h1> Halo, perkenalkan nama saya jeremi. </h1>
                 <p> Saya adalah seorang junior progammer. </p>
-                <a href="#about"> Tentang saya </a>
+                <a href="#about" class="btn-link"> Tentang saya </a>
             </article>
         </section>
 
         <section class="container" id="about">
             <article class="content">
-                <h1> Tentang saya </h1>
+                <h2> Tentang saya </h2>
                 <figure id="profile">
                     <img src="image/me.jpg" alt="jeremi-salvatores-sihotang" />
                     <figcaption> Jeremi Salvatores Sihotang </figcaption>
@@ -55,12 +58,12 @@
                     Saya memiliki keterampilan dalam HTML, CSS, PHP, JavaScript, dan Python. <br>
                     Selain itu, saya juga berpengalaman dalam menggunakan Photoshop dan Adobe Premiere Pro untuk menciptakan konten visual yang menarik. Saya bersemangat untuk belajar dan berkontribusi dalam proyek yang menantang. 
                 </p>
-                <h2> Latar Belakang </h2>
+                <h3> Latar Belakang </h3>
                 <p> Saya lulusan dari sekolah SMK Swasta Eka Prasetya Medan Helvetia dengan jurusan teknik komputer dan jaringan. <br>
                     Selain itu saya juga mengikuti kelas tatap muka pemrograman di Dicoding dan Revou Fundamental Course. <br>
                 </p>
-                <h2> Sertifikat </h2>
-                <aside class="card">
+                <h3> Sertifikat </h3>
+                <section class="card">
                     <figure class="row">
                         <img src="image/Sertifikat/Dicoding.png" alt="dicoding-certificate" />
                         <figcaption> Dicoding Course </figcaption>
@@ -69,42 +72,42 @@
                         <img src="image/Sertifikat/Revou.png" alt="revou-certificate" />
                         <figcaption> Revou Fundamental Course </figcaption>
                     </figure>
-                </aside>
-                <h2> Keahlian </h2>
-                <aside class="skill">
+                </section>
+                <h3> Keahlian </h3>
+                <section class="skill">
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-html.svg"> Your browser does not support SVG </object>
+                        <img src="image/Icons/logo-html.svg" />
                         <figcaption> HTML : Mampu membuat struktur halaman web yang semantik dan responsif. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-css.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-css.svg" />
                         <figcaption> CSS : Menguasai styling halaman web dengan CSS, termasuk Flexbox dan Grid. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-js.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-js.svg" />
                         <figcaption> JavaScript : Mampu menambahkan interaktivitas pada halaman web menggunakan JavaScript. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-php.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-php.svg" /> 
                         <figcaption> PHP : Memahami dasar-dasar pengembangan web dengan PHP dan pengelolaan basis data menggunakan MySQL. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-python.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-python.svg" />
                         <figcaption> Python : Mampu menulis skrip dasar dan memahami konsep pemrograman berorientasi objek. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-adobe-ps.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-adobe-ps.svg" />
                         <figcaption> Photoshop : Mampu membuat dan mengedit gambar, serta desain grafis. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-adobe-pr.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-adobe-pr.svg" />
                         <figcaption> Adobe Premiere Pro : Mampu mengedit video dan membuat konten multimedia yang menarik. </figcaption>
                     </figure>
                     <figure class="row">
-                        <object type="image/svg+xml" data="image/Icons/logo-wordpress.svg"> Your browser does not support SVG </object> 
+                        <img src="image/Icons/logo-wordpress.svg" />
                         <figcaption> Wordpress : Mampu menggunakan Elementor juga berfokus pada SEO untuk meningkatkan visibilitas.  </figcaption>
                     </figure>
-                </aside>
+                </section>
             </article>
         </section>
 
@@ -224,62 +227,67 @@
                 <h2> Website </h2>
                 <figure class="row">
                     <img src="image/Website/website-(1).png" alt="design-website-(1)" />
-                    <a href="sususkygoat.com" target="_blank" rel="noopener noreferrer"> Lihat Disini </a>
+                    <a href="sususkygoat.com" target="_blank" rel="noopener noreferrer" class="btn-link"> Lihat Disini </a>
                 </figure>
                 <figure class="row">
                     <img src="image/Website/website-(2).png" alt="design-website-(2)" />
-                    <a href="susuetawa.id" target="_blank" rel="noopener noreferrer"> Lihat Disini </a>
+                    <a href="susuetawa.id" target="_blank" rel="noopener noreferrer" class="btn-link"> Lihat Disini </a>
                 </figure>
-            </article>
-            <article class="lightbox" id="lightbox">
-                <i data-feather="x-square" class="icons" id="close"></i>
-                <img class="lightbox-img" id="lightbox-img" src="" alt="">
             </article>
 
             <article class="project-self">
                 <h2> Desain Feed Puzzle Instagram </h2>
-                <figure class="row-self">
+                <figure class="row">
                     <img src="image/Design(2)/HD/HD-(1).jpg" alt="hari-dokter-feed" />
                     <img src="image/Design(2)/HD/HD-(2).jpg" alt="hari-dokter-feed" />
                     <img src="image/Design(2)/HD/HD-(3).jpg" alt="hari-dokter-feed" />
                 </figure>
-                <figure class="row-self">
+                <figure class="row">
                     <img src="image/Design(2)/HPN/HPN-(1).jpg" alt="hari-penerbangan-feed" />
                     <img src="image/Design(2)/HPN/HPN-(2).jpg" alt="hari-penerbangan-feed" />
                     <img src="image/Design(2)/HPN/HPN-(3).jpg" alt="hari-penerbangan-feed" />
                 </figure>
-                <figure class="row-self">
+                <figure class="row">
                     <img src="image/Design(2)/HLN/HLN-(1).jpg" alt="hari-listrik-feed" />
                     <img src="image/Design(2)/HLN/HLN-(2).jpg" alt="hari-listrik-feed" />
                     <img src="image/Design(2)/HLN/HLN-(3).jpg" alt="hari-listrik-feed" />
                 </figure>
-                <figure class="row-self">
+                <figure class="row">
                     <img src="image/Design(2)/HSP/HSP-(1).jpg" alt="hari-sumpah-pemuda-feed" />
                     <img src="image/Design(2)/HSP/HSP-(2).jpg" alt="hari-sumpah-pemuda-feed" />
                     <img src="image/Design(2)/HSP/HSP-(3).jpg" alt="hari-sumpah-pemuda-feed" />
                 </figure>
             </article>
+
+            <article class="lightbox" id="lightbox">
+                <i data-feather="x-square" class="icons" id="close"></i>
+                <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            </article>
+
         </section>
 
 
         <section class="container" id="contact">
             <article class="contact">
-                <h1> Kontak saya </h1>
-                <form action="send_email.php" method="POST">
-                    <article class="input-group">
-                        <i data-feather="user" class="icons"></i>
-                        <input type="text" placeholder="Nama">
-                    </article>
-                    <article class="input-group">
-                        <i data-feather="mail" class="icons"></i>
-                        <input type="text" placeholder="Email">
-                    </article>
-                    <article class="input-group">
+                <h2> Kontak saya </h2>
+                <p id="desc"> Silakan hubungi saya menggunakan rincian kontak di bawah ini. </p>
+                <section class="content">
+                    <article class="row" id="row-1">
                         <i data-feather="phone" class="icons"></i>
-                        <input type="text" placeholder="Handphone">
-                    </article>  
-                    <button type="submit" class="btn"> <i data-feather="send" class="icons"></i> </button>
-                </form>
+                        <h3> Handphone / WhatsApp </h3>
+                        <p> +62 831 6943 9114 </p>
+                    </article>
+                    <article class="row" id="row-2">
+                        <i data-feather="globe" class="icons"></i>
+                        <h3> Websiteku </h3>
+                        <p> <a href="http://dolphinw.ct.ws" class="row-links"> Disini </a></p>
+                    </article>
+                    <article class="row" id="row-3">
+                        <i data-feather="refresh-ccw" class="icons"></i>
+                        <h3> Muat Ulang Halaman </h3>
+                        <p> <a href="index.html" class="row-links"> Disini </a></p>
+                    </article>
+                </section>
             </article>
         </section>
 

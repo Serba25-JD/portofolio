@@ -1,5 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Header Click
+    const navBar = document.querySelector('#navbar');
+    document.querySelector('#menu').onclick = () => {
+        navBar.classList.toggle('active');
+    }
+    // Menu Close if click on menu and navbar
+    const menu = document.querySelector('#menu');
+    document.addEventListener('click', function(e) {
+        if(!menu.contains(e.target) &&  !navBar.contains(e.target))
+            navBar.classList.remove('active');
+    })
+    // Menu Close
+    const menux = document.querySelector('#menu-close');
+    menux.onclick = () => {
+        navBar.classList.remove('active');
+    }
+
     // Open Image
     document.querySelectorAll('.row img').forEach(img => {
         img.addEventListener('click', function() {

@@ -1,3 +1,5 @@
-# Portofolio Saya
-## Website Hitung Luas dan Keliling Persegi dan Persegi Panjang
+# Portofolioku
+## Website Kalkulaktor Hitung Luas dan Keliling Persegi Juga Persegi Panjang
 ### https://revou-fundamental-course.github.io/17-mar-25-Serba25-JD/
+## Websiteku
+## http://dolphinw.ct.ws
