@@ -80,7 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        requestAnimationFrame(animateScroll); // Mulai animasi
-}
-
+        // Mulai animasi
+        requestAnimationFrame(animateScroll);
+    }
 });
+
+feather.replace();
