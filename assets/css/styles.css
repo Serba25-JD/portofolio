@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+
 :root {
     --primary: #A5F2F3;
     --p2: #fff;
@@ -435,15 +437,6 @@ footer {
 .scroll-top:hover {
     background-color: var(--p2); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Icons Styles */
-.icons {
-    color: var(--text);
-}
-
-.icons:hover {
-    color: var(--primary);
 }
 
 /* Keyframes */
