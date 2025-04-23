@@ -187,6 +187,7 @@ main {
     height: 100vh;
     place-content: center;
     text-align: center;
+    background-color: var(--primary);
 }
 
 .container .hero a {
