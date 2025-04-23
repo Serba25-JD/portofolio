@@ -17,28 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navBar.classList.remove('active');
     }
 
-    // Open Image
-    document.querySelectorAll('.row img').forEach(img => {
-        img.addEventListener('click', function() {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = this.src;
-            lightbox.style.display = 'flex';
-        });
-    });
-
-    // Close Image Icon
-    document.getElementById('close').addEventListener('click', function() {
-        document.getElementById('lightbox').style.display = 'none';
-    });
-
-    // Click Outside Image CLose
-    window.onclick = function(event) {
-        if (event.target == lightbox) {
-            lightbox.style.display = "none";
-        }
-    }
-
     // Scroll Up
     const scrollTopButton = document.querySelector('.scroll-top');
     window.addEventListener('scroll', () => {

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
     <!-- Meta Tag -->
-    <meta name="description" content="Portofolio Jeremi Salvatores Sihotang, seorang junior programmer dengan keahlian dalam HTML, CSS, JavaScript, PHP, dan Python. Temukan proyek dan desain kreatif saya di sini.">
+    <meta name="title" content="Portofolio Jeremi Salvatores Sihotang">
+    <meta name="description" content="Portofolio Jeremi Salvatores Sihotang, seorang junior programmer dengan keahlian dalam HTML, CSS, JavaScript, PHP, dan Python.">
     <meta name="keywords" content="portofolio, junior programmer, HTML, CSS, JavaScript, PHP, Python, desain, multimedia">
     <meta name="author" content="Jeremi Salvatores Sihotang">
     <meta name="robots" content="index, follow">
@@ -17,27 +18,28 @@
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Favicon -->
-    <link rel="icon" href="image/Favicon.png" type="image/png">
+    <link rel="icon" href="image/favicon.ico"type="image/x-icon">
     <!-- Vanila CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
     <header id="navbar">
-        <a href="index.html"> <img src="image/Logo-Header.png" alt="Logo" id="logo"/> </a>
+        <a href="index.html"> <img src="image/logo-header.webp" width="200" height="60" alt="Logo" id="logo" loading="eager" /> </a>
         <nav>
             <ul>
-                <li><a href="#home"> Beranda </a></li>
-                <li><a href="#about"> Tentang </a></li>
-                <li><a href="#project"> Proyek </a></li>
-                <li><a href="#contact"> Kontak </a></li>
+                <li><a href="index.html#home"> Beranda </a></li>
+                <li><a href="index.html#about"> Tentang </a></li>
+                <li><a href="index.html#project"> Proyek </a></li>
+                <li><a href="index.html#contact"> Kontak </a></li>
                 <li> <i data-feather="x" id="menu-close"></i> </li>
             </ul>
         </nav>
         <aside class="social">
             <ul>
-                <li><a href="https://www.instagram.com/je.onlyone_" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-instagram.svg" alt="instagram-logo" /> </a></li>
-                <li><a href="https://discord.com/users/jeremi_salvatores" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-discord.svg" alt="discord-logo" /> </a></li>
-                <li><a href="https://github.com/Serba25-JD" target="_blank" rel="noopener noreferrer"> <img src="image/Icons/logo-github.svg" alt="github-logo" /> </a></li>
+                <li><a href="https://www.instagram.com/je.onlyone_" target="_blank" rel="noopener noreferrer"> <img src="image/icons-svg/logo-instagram.svg" alt="instagram-logo" loading="lazy" /> </a></li>
+                <li><a href="https://discord.com/users/jeremi_salvatores" target="_blank" rel="noopener noreferrer"> <img src="image/icons-svg/logo-discord.svg" alt="discord-logo" loading="lazy" /> </a></li>
+                <li><a href="https://github.com/Serba25-JD" target="_blank" rel="noopener noreferrer"> <img src="image/icons-svg/logo-github.svg" alt="github-logo" loading="lazy" /> </a></li>
             </ul>
         </aside>
     </header>
@@ -48,7 +50,7 @@
         <section class="container" id="home">
             <article class="hero" id="Photo-by-Leone-Venter-on-Unsplash">
                 <h1> Halo, perkenalkan nama saya jeremi. </h1>
-                <p> Saya adalah seorang junior progammer. </p>
+                <p> Saya seorang junior progammer. </p>
                 <a href="#about"> Tentang saya </a>
             </article>
         </section>
@@ -57,12 +59,13 @@
             <article class="content">
                 <h2> Tentang saya </h2>
                 <figure id="profile">
-                    <img src="image/me.jpg" alt="jeremi-salvatores-sihotang" />
+                    <img src="image/me.webp" width="901" height="1600" alt="jeremi-salvatores-sihotang" loading="lazy"/>
                     <figcaption> Jeremi Salvatores Sihotang </figcaption>
                 </figure>
-                <p> Saya adalah seorang junior programmer dengan latar belakang dalam pengembangan web dan desain multimedia. <br>
+                <p> Seorang junior programmer dengan latar belakang dalam pengembangan web dan desain multimedia. <br>
                     Saya memiliki keterampilan dalam HTML, CSS, PHP, JavaScript, dan Python. <br>
-                    Selain itu, saya juga berpengalaman dalam menggunakan Photoshop dan Adobe Premiere Pro untuk menciptakan konten visual yang menarik. Saya bersemangat untuk belajar dan berkontribusi dalam proyek yang menantang. 
+                    Selain itu, saya juga berpengalaman dalam menggunakan Photoshop dan Adobe Premiere Pro untuk menciptakan konten visual yang menarik. <br>
+                    Saya bersemangat untuk belajar dan berkontribusi dalam proyek yang menantang. 
                 </p>
                 <h3> Latar Belakang </h3>
                 <p> Saya lulusan dari sekolah SMK Swasta Eka Prasetya Medan Helvetia dengan jurusan teknik komputer dan jaringan. <br>
@@ -71,46 +74,46 @@
                 <h3> Sertifikat </h3>
                 <section class="card">
                     <figure class="row">
-                        <img src="image/Sertifikat/Dicoding.png" alt="dicoding-certificate" />
+                        <img src="image/certificate/Dicoding.webp" width="798" height="564" alt="dicoding-certificate" loading="lazy" />
                         <figcaption> Dicoding Course </figcaption>
                     </figure>
                     <figure class="row">
-                        <img src="image/Sertifikat/Revou.png" alt="revou-certificate" />
+                        <img src="image/certificate/Revou.webp" width="798" height="565" alt="revou-certificate" loading="lazy"/>
                         <figcaption> Revou Fundamental Course </figcaption>
                     </figure>
                 </section>
                 <h3> Keahlian </h3>
                 <section class="skill">
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-html.svg" alt="logo-html" />
+                        <img src="image/icons-svg/logo-html.svg" alt="logo-html" />
                         <figcaption> HTML : Mampu membuat struktur halaman web yang semantik dan responsif. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-css.svg" alt="logo-css" />
+                        <img src="image/icons-svg/logo-css.svg" alt="logo-css" />
                         <figcaption> CSS : Menguasai styling halaman web dengan CSS, termasuk Flexbox dan Grid. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-js.svg" alt="logo-js" />
+                        <img src="image/icons-svg/logo-js.svg" alt="logo-js" />
                         <figcaption> JavaScript : Mampu menambahkan interaktivitas pada halaman web menggunakan JavaScript. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-php.svg" alt="logo-php" /> 
+                        <img src="image/icons-svg/logo-php.svg" alt="logo-php" /> 
                         <figcaption> PHP : Memahami dasar-dasar pengembangan web dengan PHP dan pengelolaan basis data menggunakan MySQL. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-python.svg" alt="logo-python" />
+                        <img src="image/icons-svg/logo-python.svg" alt="logo-python" />
                         <figcaption> Python : Mampu menulis skrip dasar dan memahami konsep pemrograman berorientasi objek. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-adobe-ps.svg" alt="logo-photoshop" />
+                        <img src="image/icons-svg/logo-adobe-ps.svg" alt="logo-photoshop" />
                         <figcaption> Photoshop : Mampu membuat dan mengedit gambar, serta desain grafis. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-adobe-pr.svg" alt="logo-adobe-premiere" />
+                        <img src="image/icons-svg/logo-adobe-pr.svg" alt="logo-adobe-premiere" />
                         <figcaption> Adobe Premiere Pro : Mampu mengedit video dan membuat konten multimedia yang menarik. </figcaption>
                     </figure>
                     <figure class="row-skill">
-                        <img src="image/Icons/logo-wordpress.svg" alt="logo-wordpress" />
+                        <img src="image/icons-svg/logo-wordpress.svg" alt="logo-wordpress" />
                         <figcaption> Wordpress : Mampu menggunakan Elementor juga berfokus pada SEO untuk meningkatkan visibilitas.  </figcaption>
                     </figure>
                 </section>
@@ -121,122 +124,122 @@
             <article class="project">
                 <h2> Desain Story WhatsApp </h2>
                 <figure class="row">
-                    <img src="image/Design/design-(1).jpg" width="750" height="1334" alt="pengumuman-libur-tahun-baru" />
+                    <img src="image/design-feed/pengumuman-libur-tahun-baru.webp" width="750" height="1334" alt="pengumuman-libur-tahun-baru" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(2).jpg" width="750" height="1334" alt="poster-satu-israj-miraj" />
+                    <img src="image/design-feed/poster-satu-israj-miraj.webp" width="750" height="1334" alt="poster-satu-israj-miraj" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(3).jpg" width="750" height="1334" alt="poster-satu-happy-lunar-new-year" />
+                    <img src="image/design-feed/poster-satu-happy-lunar-new-year.webp" width="750" height="1334" alt="poster-satu-happy-lunar-new-year" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(4).jpg" width="750" height="1334" alt="poster-valentine" />
+                    <img src="image/design-feed/poster-valentine.webp" width="750" height="1334" alt="poster-valentine" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(5).jpg" width="750" height="1334" alt="poster-marhaban-ya-ramadhan" />
+                    <img src="image/design-feed/poster-marhaban-ya-ramadhan.webp" width="750" height="1334" alt="poster-marhaban-ya-ramadhan" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(6).jpg" width="750" height="1334" alt="poster-susu-kambing-etawa-konten" />
+                    <img src="image/design-feed/poster-susu-kambing-etawa-konten.webp" width="750" height="1334" alt="poster-susu-kambing-etawa-konten" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(7).jpg" width="750" height="1334" alt="poster-satu-hari-raya-nyepi" />
+                    <img src="image/design-feed/poster-satu-hari-raya-nyepi.webp" width="750" height="1334" alt="poster-satu-hari-raya-nyepi" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(8).jpg" width="750" height="1334" alt="poster-satu-idulfitri-1446-hijriyah" />
+                    <img src="image/design-feed/poster-satu-idulfitri-1446-hijriyah.webp" width="750" height="1334" alt="poster-satu-idulfitri-1446-hijriyah" loading="lazy" />
                 </figure>
 
                 <h2> Desain Feed Instagram </h2>
                 <figure class="row">
-                    <img src="image/Design/design-(9).jpg" width="1080" height="1350" alt="poster-konten-satu-usaha-bisnis-susu-kambing-etawa" />
+                    <img src="image/design-feed/poster-konten-satu-usaha-bisnis-susu-kambing-etawa.webp" width="1080" height="1350" alt="poster-konten-satu-usaha-bisnis-susu-kambing-etawa" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(10).jpg" width="1080" height="1350" alt="poster-hari-tani-nasional" />
+                    <img src="image/design-feed/poster-hari-tani-nasional.webp" width="1080" height="1350" alt="poster-hari-tani-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(11).jpg" width="1080" height="1350" alt="poster-hari-jantung-sedunia" />
+                    <img src="image/design-feed/poster-hari-jantung-sedunia.webp" width="1080" height="1350" alt="poster-hari-jantung-sedunia" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(12).jpg" width="1080" height="1350" alt="poster-hari-peringatan-pemberontakan-g30-spki" />
+                    <img src="image/design-feed/poster-hari-peringatan-pemberontakan-g30-spki.webp" width="1080" height="1350" alt="poster-hari-peringatan-pemberontakan-g30-spki" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(13).jpg" width="1080" height="1350" alt="poster-kesaktian-pancasila" />
+                    <img src="image/design-feed/poster-kesaktian-pancasila.webp" width="1080" height="1350" alt="poster-kesaktian-pancasila" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(14).jpg" width="1080" height="1350" alt="poster-hari-lansia-internasional" />
+                    <img src="image/design-feed/poster-hari-lansia-internasional.webp" width="1080" height="1350" alt="poster-hari-lansia-internasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(15).jpg" width="1080" height="1350" alt="poster-hari-batik-nasional" />
+                    <img src="image/design-feed/poster-hari-batik-nasional.webp" width="1080" height="1350" alt="poster-hari-batik-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(16).jpg" width="1080" height="1350" alt="poster-hari-hewan-ternak-internasional" />
+                    <img src="image/design-feed/poster-hari-hewan-ternak-internasional.webp" width="1080" height="1350" alt="poster-hari-hewan-ternak-internasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(17).jpg" width="1080" height="1350" alt="poster-konten-dua-perbedaan-susu-kambing-etawa-vs-susu-sapi" />
+                    <img src="image/design-feed/poster-konten-dua-perbedaan-susu-kambing-etawa-vs-susu-sapi.webp" width="1080" height="1350" alt="poster-konten-dua-perbedaan-susu-kambing-etawa-vs-susu-sapi" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(18).jpg" width="1080" height="1350" alt="poster-hari-osteoporosis-sedunia" />
+                    <img src="image/design-feed/poster-hari-osteoporosis-sedunia.webp" width="1080" height="1350" alt="poster-hari-osteoporosis-sedunia" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(19).jpg" width="1080" height="1350" alt="poster-hari-dokter-nasional" />
+                    <img src="image/design-feed/poster-hari-dokter-nasional.webp" width="1080" height="1350" alt="poster-hari-dokter-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(20).jpg" width="1080" height="1350" alt="poster-hari-sumpah-pemuda" />
+                    <img src="image/design-feed/poster-hari-sumpah-pemuda.webp" width="1080" height="1350" alt="poster-hari-sumpah-pemuda" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(21).jpg" width="1080" height="1350" alt="poster-hari-pahlawan-nasional" />
+                    <img src="image/design-feed/poster-hari-pahlawan-nasional.webp" width="1080" height="1350" alt="poster-hari-pahlawan-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(22).jpg" width="1080" height="1350" alt="poster-hari-kesehatan-nasional" />
+                    <img src="image/design-feed/poster-hari-kesehatan-nasional.webp" width="1080" height="1350" alt="poster-hari-kesehatan-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(23).jpg" width="1080" height="1350" alt="poster-hari-pneumonia-sedunia" />
+                    <img src="image/design-feed/poster-hari-pneumonia-sedunia.webp" width="1080" height="1350" alt="poster-hari-pneumonia-sedunia" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(24).jpg" width="1080" height="1350" alt="poster-hari-perhubungan-darat" />
+                    <img src="image/design-feed/poster-hari-perhubungan-darat.webp" width="1080" height="1350" alt="poster-hari-perhubungan-darat" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(25).jpg" width="1080" height="1350" alt="poster-tiga-keuntungan-bergabung-dengan-suka-sehat" />
+                    <img src="image/design-feed/poster-tiga-keuntungan-bergabung-dengan-suka-sehat.webp" width="1080" height="1350" alt="poster-tiga-keuntungan-bergabung-dengan-suka-sehat" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(26).jpg" width="1080" height="1350" alt="poster-hari-guru-nasional" />
+                    <img src="image/design-feed/poster-hari-guru-nasional.webp" width="1080" height="1350" alt="poster-hari-guru-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(27).jpg" width="1080" height="1350" alt="poster-hari-ibu-nasional"/>
+                    <img src="image/design-feed/poster-hari-ibu-nasional.webp" width="1080" height="1350" alt="poster-hari-ibu-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(28).jpg" width="1080" height="1350" alt="poster-merry-christmas"/>
+                    <img src="image/design-feed/poster-merry-christmas.webp" width="1080" height="1350" alt="poster-merry-christmas" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(29).jpg" width="1080" height="1350" alt="poster-happy-new-year" />
+                    <img src="image/design-feed/poster-happy-new-year.webp" width="1080" height="1350" alt="poster-happy-new-year" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(30).jpg" width="1080" height="1350" alt="poster-hari-gizi-nasional" />
+                    <img src="image/design-feed/poster-hari-gizi-nasional.webp" width="1080" height="1350" alt="poster-hari-gizi-nasional" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(31).jpg" width="1080" height="1350" alt="poster-dua-israj-miraj" />
+                    <img src="image/design-feed/poster-dua-israj-miraj.webp" width="1080" height="1350" alt="poster-dua-israj-miraj" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(32).jpg" width="1080" height="1350" alt="poster-dua-happy-lunar-new-year" />
+                    <img src="image/design-feed/poster-dua-happy-lunar-new-year.webp" width="1080" height="1350" alt="poster-dua-happy-lunar-new-year" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(33).jpg" width="1080" height="1350" alt="poster-dua-hari-raya-nyepi" />
+                    <img src="image/design-feed/poster-dua-hari-raya-nyepi.webp" width="1080" height="1350" alt="poster-dua-hari-raya-nyepi" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(34).jpg" width="1080" height="1350" alt="poster-dua-idulfitri-1446-hijriyah" />
+                    <img src="image/design-feed/poster-dua-idulfitri-1446-hijriyah.webp" width="1080" height="1350" alt="poster-dua-idulfitri-1446-hijriyah" loading="lazy" />
                 </figure>
                 <figure class="row">
-                    <img src="image/Design/design-(35).jpg" width="1080" height="1350" alt="poster-hari-kesehatan-dunia" />
+                    <img src="image/design-feed/poster-hari-kesehatan-dunia.webp" width="1080" height="1350" alt="poster-hari-kesehatan-dunia" loading="lazy" />
                 </figure>
             </article>
 
             <article class="project-website">
                 <h2> Website </h2>
                 <figure class="row">
-                    <img src="image/Website/website-(1).png" width="1897" height="910" alt="sususkygoat.com" />
+                    <img src="image/website/sususkygoat.com.webp" width="1897" height="910" alt="sususkygoat.com" />
                     <a href="https://sususkygoat.com" target="_blank" rel="noopener noreferrer"> Lihat Disini </a>
                 </figure>
                 <figure class="row">
-                    <img src="image/Website/website-(2).png" width="1901" height="908" alt="susuetawa.id" />
+                    <img src="image/website/susuetawa.id.webp" width="1901" height="908" alt="susuetawa.id" />
                     <a href="https://susuetawa.id" target="_blank" rel="noopener noreferrer"> Lihat Disini </a>
                 </figure>
             </article>
@@ -244,30 +247,25 @@
             <article class="project-self">
                 <h2> Desain Feed Puzzle Instagram </h2>
                 <figure class="row-self">
-                    <img src="image/Design(2)/HD/HD-(1).jpg" width="1080" height="1350" alt="hari-dokter-feed-kiri" />
-                    <img src="image/Design(2)/HD/HD-(2).jpg" width="1080" height="1350" alt="hari-dokter-feed-tengah" />
-                    <img src="image/Design(2)/HD/HD-(3).jpg" width="1080" height="1350" alt="hari-dokter-feed-kanan" />
+                    <img src="image/design-puzzle/hari-dokter/hari-dokter-feed-kiri.webp" width="1080" height="1350" alt="hari-dokter-nasional-feed-kiri" />
+                    <img src="image/design-puzzle/hari-dokter/hari-dokter-feed-tengah.webp" width="1080" height="1350" alt="hari-dokter-nasional-feed-tengah" />
+                    <img src="image/design-puzzle/hari-dokter/hari-dokter-feed-kanan.webp" width="1080" height="1350" alt="hari-dokter-nasional-feed-kanan" />
                 </figure>
                 <figure class="row-self">
-                    <img src="image/Design(2)/HPN/HPN-(1).jpg" width="1080" height="1350" alt="hari-penerbangan-feed-kiri" />
-                    <img src="image/Design(2)/HPN/HPN-(2).jpg" width="1080" height="1350" alt="hari-penerbangan-feed-tengah" />
-                    <img src="image/Design(2)/HPN/HPN-(3).jpg" width="1080" height="1350" alt="hari-penerbangan-feed-kanan" />
+                    <img src="image/design-puzzle/hari-penerbangan/hari-penerbangan-feed-kiri.webp" width="1080" height="1350" alt="hari-penerbangan-nasional-feed-kiri" />
+                    <img src="image/design-puzzle/hari-penerbangan/hari-penerbangan-feed-tengah.webp" width="1080" height="1350" alt="hari-penerbangan-nasional-feed-tengah" />
+                    <img src="image/design-puzzle/hari-penerbangan/hari-penerbangan-feed-kanan.webp" width="1080" height="1350" alt="hari-penerbangan-nasional-feed-kanan" />
                 </figure>
                 <figure class="row-self">
-                    <img src="image/Design(2)/HLN/HLN-(1).jpg" width="1080" height="1350" alt="hari-listrik-feed-kiri" />
-                    <img src="image/Design(2)/HLN/HLN-(2).jpg" width="1080" height="1350" alt="hari-listrik-feed-tengah" />
-                    <img src="image/Design(2)/HLN/HLN-(3).jpg" width="1080" height="1350" alt="hari-listrik-feed-kanan" />
+                    <img src="image/design-puzzle/hari-listrik/hari-listrik-feed-kiri.webp" width="1080" height="1350" alt="hari-listrik-nasional-feed-kiri" />
+                    <img src="image/design-puzzle/hari-listrik/hari-listrik-feed-tengah.webp" width="1080" height="1350" alt="hari-listrik-nasional-feed-tengah" />
+                    <img src="image/design-puzzle/hari-listrik/hari-listrik-feed-kanan.webp" width="1080" height="1350" alt="hari-listrik-nasional-feed-kanan" />
                 </figure>
                 <figure class="row-self">
-                    <img src="image/Design(2)/HSP/HSP-(1).jpg" width="1080" height="1350" alt="hari-sumpah-pemuda-feed-kiri" />
-                    <img src="image/Design(2)/HSP/HSP-(2).jpg" width="1080" height="1350" alt="hari-sumpah-pemuda-feed-tengah" />
-                    <img src="image/Design(2)/HSP/HSP-(3).jpg" width="1080" height="1350" alt="hari-sumpah-pemuda-feed-kanan" />
+                    <img src="image/design-puzzle/hari-sumpah-pemuda/hari-sumpah-pemuda-kiri.webp" width="1080" height="1350" alt="hari-sumpah-pemuda-nasional-feed-kiri" />
+                    <img src="image/design-puzzle/hari-sumpah-pemuda/hari-sumpah-pemuda-tengah.webp" width="1080" height="1350" alt="hari-sumpah-pemuda-nasional-feed-tengah" />
+                    <img src="image/design-puzzle/hari-sumpah-pemuda/hari-sumpah-pemuda-kanan.webp" width="1080" height="1350" alt="hari-sumpah-pemuda-nasional-feed-kanan" />
                 </figure>
-            </article>
-
-            <article class="lightbox" id="lightbox">
-                <i data-feather="x-square" class="icons" id="close"></i>
-                <img class="lightbox-img" id="lightbox-img" src="" alt="">
             </article>
 
         </section>
@@ -285,18 +283,18 @@
                     <article class="row" id="row-2">
                         <i data-feather="globe" class="icons"></i>
                         <h3> Websiteku </h3>
-                        <p> <a href="http://dolphinw.ct.ws" class="row-links" target="_blank" rel="noopener noreferrer"> Disini </a></p>
+                        <p> <a href="http://dolphinw.ct.ws" target="_blank" rel="noopener noreferrer"> Disini </a></p>
                     </article>
                     <article class="row" id="row-3">
                         <i data-feather="refresh-ccw" class="icons"></i>
                         <h3> Muat Ulang Halaman </h3>
-                        <p> <a href="index.html" class="row-links"> Disini </a></p>
+                        <p> <a href="index.html"> Disini </a></p>
                     </article>
                 </section>
             </article>
         </section>
 
-        <a href="#home" class="scroll-top"><i data-feather="chevrons-up" class="icons"></i></a>
+        <a href="index.html#home" class="scroll-top"><i data-feather="chevrons-up" class="icons"></i></a>
 
     </main>
 
