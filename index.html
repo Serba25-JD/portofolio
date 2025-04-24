@@ -24,13 +24,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap" rel="preconnect">
     <!-- Favicon -->
     <link rel="icon" href="image/favicon.ico"type="image/x-icon">
     <!-- Vanila CSS -->
-    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preload" href="assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
     <!-- Reponsive CSS -->
-    <link rel="preload" href="assets/css/responsive.css" as="style">
+    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
     <header id="navbar">
@@ -286,8 +286,8 @@
                 <section class="content">
                     <article class="row" id="row-1">
                         <img src="image/icons-svg/phone.svg" width="24" height="24" alt="phone" loading="lazy" />
-                        <h3> Handphone / WhatsApp </h3>
-                        <p> +62 831 6943 9114 </p>
+                        <h3> WhatsApp </h3>
+                        <p> <a href="https://api.whatsapp.com/send?phone=6283169439114" target="_blank" rel="noopener noreferrer"> Disini </a></p>
                     </article>
                     <article class="row" id="row-2">
                         <img src="image/icons-svg/globe.svg" width="24" height="24" alt="globe" loading="lazy" />
@@ -296,7 +296,7 @@
                     </article>
                     <article class="row" id="row-3">
                         <img src="image/icons-svg/refresh-ccw.svg" width="24" height="24" alt="refresh-ccw" loading="lazy" />
-                        <h3> Muat Ulang Halaman </h3>
+                        <h3> Refresh </h3>
                         <p> <a href="index.html"> Disini </a></p>
                     </article>
                 </section>
