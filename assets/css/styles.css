@@ -437,6 +437,37 @@ footer {
     background-color: var(--primary);
 }
 
+/* Services */
+.container .project-services h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.container .project-services .contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.container .project-services .contents .row {
+    background-color: var(--primary);
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.container .project-services .contents .row img {
+    width: 100%;
+    height: auto;
+}
+
+.container .project-services .contents .row button {
+    border: none;
+    background-color: var(--p2);
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
 /* Fiture */
 /* Scroll Up Styles */
 .scroll-top {
