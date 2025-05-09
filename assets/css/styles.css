@@ -443,6 +443,29 @@ footer {
     margin: 2rem 0;
 }
 
+.container .project-services .loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container .project-services .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spins 2s linear infinite;
+}
+
 .container .project-services .contents {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -466,6 +489,70 @@ footer {
     padding: 1rem 2rem;
     margin: 2rem 0;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 2rem;
+}
+
+.container .project-services .contents .row button:hover {
+    background-color: var(--primary);
+}
+
+.container .project-services .page {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.container .project-services .page button {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: var(--primary);
+    cursor: pointer;
+    border: none;
+    border-radius: 2rem;
+}
+
+.container .project-services .page button:hover {
+    background-color: var(--p2);
+}
+
+/* Anime Streaming */
+.container .project-services .show-eps {
+    text-align: center;
+}
+.container .project-services .show-eps .eps-title nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1rem;
+    margin: 2rem 0;
+}
+.container .project-services .show-eps .eps-title nav ul li {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.container .project-services .show-eps .eps-title nav ul li:hover {
+    background-color: var(--primary);
+}
+
+#anime-stream {
+    display: none;
+}
+
+#anime-stream.active {
+    display: block;
+}
+
+#anime-stream iframe {
+    width: 100%;
+    height: 100vh;
 }
 
 /* Fiture */
@@ -543,4 +630,9 @@ footer {
     to {
       transform: rotateY(5turn);
     }
+}
+
+@keyframes spins {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

@@ -53,38 +53,33 @@
         </aside>
     </header>
 
+    <img src="image/icons-svg/menu.svg" width="24" height="24" alt="menu" loading="lazy" id="menu" />
+
     <main>
-
-        <img src="image/icons-svg/menu.svg" width="24" height="24" alt="menu" loading="lazy" id="menu" />
-
-        <section class="container" id="home">
-            <article class="hero">
-                <h1> Halo, ini merupakan halaman layanan dari saya. </h1>
-                <a href="layanan.html#services" title="Layanan Portofolio"> Layanan </a>
-            </article>
-        </section>
-
-        <section class="container" id="services">
-
-            <article class="project-services">
-                <h2> Anime Ongoing </h2>
+        <section class="container">
+            <article class="project-services" id="anime-desc">
+                <h2> Anime Informasi </h2>
                 <section class="loading" id="loading">
                     <div class="spinner"></div>
                 </section>
-                <section class="contents" id="anime-going">
-                </section>
-                <section class="page">
-                    <button id="prevBtn"> Sebelumnya </button>
-                    <button id="nextBtn"> Selanjutnya </button>
+                <section class="show-eps" id="show-desc">
                 </section>
             </article>
         </section>
 
+        <section class="container" id="anime-stream">
+            <section class="loading" id="loading">
+                <div class="spinner"></div>
+            </section>
+            <section class="video" id="anime-stream-video">
+            </section>
+        </section>
+
         <a href="index.html#home" class="scroll-top"> <img src="image/icons-svg/chevrons-up.svg" width="24" height="24" alt="checvrons-up" loading="lazy" /> </a>
-        
 
     </main>
+
 <script src="assets/js/script.js" defer></script>
-<script src="assets/js/services.js" defer></script>
+<script src="assets/js/stream.js" defer></script>
 </body>
 </html>

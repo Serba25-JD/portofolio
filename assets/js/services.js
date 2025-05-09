@@ -1,7 +1,6 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     animeGoing();
-
-// })
+document.addEventListener('DOMContentLoaded', function() {
+    animeGoing(currentPage);
+});
 
 // Check Url Response 
 function checkUrl(url) {
@@ -19,35 +18,56 @@ function checkUrl(url) {
 }
 
 // Animegoing
-// function animeGoing() {
-//     checkUrl('https://sheepbrand.com/sheepbrandftp/api/animegoing')
-//     .then(data => {
-//         if (data && data.result) {
-//             const animegoingContainer = document.getElementById('anime-going');
-//             data.result.forEach(anime => {
-//                 const animegoingSection = document.createElement('figure');
-//                 animegoingSection.classList.add('row');
-//                 animegoingSection.innerHTML = `
-//                 <img src="${anime.image}" alt="${anime.title}" width="225" height="318" loading="lazy" />
-//                 <figcaption> ${anime.title} </figcaption>
-//                 <button class="list-eps"> Episode </button>
-//                 `
-//                 animegoingContainer.append(animegoingSection);
-//             })
-//         }
-//     })
-//     document.querySelectorAll('.list-eps').forEach(link => {
-//         link.addEventListener('click', function(e) {
-//             checkUrl(`https://sheepbrand.com/sheepbrandftp/api/animelink?url=${anime.url}`)
-//         })
-//     })
-// }
+let currentPage = 1;
 
-const list = document.querySelector('.list-eps');
-list.addEventListener('click', function(e) {
-    console.log(e);
-})
+function animeGoing(pages) {
+    document.getElementById('loading').style.display = 'flex';
+    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animegoing?pages=' + pages)
+    .then(data => {
+        if (data && data.result) {
+            const animegoingContainer = document.getElementById('anime-going');
+            animegoingContainer.innerHTML = '';
+            data.result.forEach(anime => {
+                const animegoingSection = document.createElement('figure');
+                animegoingSection.classList.add('row');
+                animegoingSection.innerHTML = `
+                    <img src="${anime.image}" alt="${anime.title}" width="225" height="318" loading="lazy" />
+                    <figcaption>${anime.title}</figcaption>
+                    <button class="list-eps" data-url="${anime.url}"> Episode </button>
+                `;
+                animegoingContainer.appendChild(animegoingSection);
+                document.getElementById('loading').style.display = 'none';
+            });
 
+            // Menambahkan event listener ke setiap tombol Episode
+            document.querySelectorAll('.list-eps').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const animeUrl = e.target.getAttribute('data-url');
+                    window.location.href = 'anime-streaming.html';
+                    localStorage.setItem('animeUrlEps', animeUrl);
+                    // const showEpsContainer = e.target.closest('figure').querySelector('.show-eps');
+                    // if (showEpsContainer.innerHTML === '') {
+                    //     animeEps(animeUrl, showEpsContainer);
+                    // } else {
+                    //     showEpsContainer.innerHTML = '';
+                    // }
+                });
+            });
 
+            // Tombol Halaman Sebelumnya
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    animeGoing(currentPage);
+                }
+            });
 
-// animelink?url=https://riie.stream/anime/shangri-la-frontier-kusoge-hunter-kamige-ni-idoman-to-su-2nd-season/
+            // Tombol Halaman Selanjutnya
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                currentPage++;
+                animeGoing(currentPage);
+            });
+        }
+    });
+    
+}
