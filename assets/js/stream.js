@@ -71,7 +71,6 @@ function animeEpsView(url) {
             const animeEpsView = document.getElementById('anime-stream-video');
             const iframe = animeEpsView.querySelector('iframe');
             if (iframe) {
-                animeEpsViewContainer.classList.remove('active');
                 document.getElementById('loading').style.display = 'flex';
                 iframe.contentWindow.postMessage('checkDebugger', '*');
                 window.addEventListener('message', (event) => {
@@ -81,15 +80,12 @@ function animeEpsView(url) {
                 });
                 if (iframe.src !== data.result.url) {
                     iframe.src = data.result.url;
-                    document.getElementById('loading').style.display = 'none';
-                    animeEpsViewContainer.classList.toggle('active');
                 }
                 iframe.onerror = function () {
                     player_error();
                 }
             } else {
                 document.getElementById('loading').style.display = 'flex';
-                animeEpsViewContainer.classList.toggle('active');
                 const newIframe = document.createElement('iframe');
                 newIframe.width = '1280';
                 newIframe.height = '720';
@@ -101,9 +97,10 @@ function animeEpsView(url) {
                     player_error();
                 }
                 animeEpsView.appendChild(newIframe);
-                document.getElementById('loading').style.display = 'none';
+                animeEpsViewContainer.classList.toggle('active');
             }
         }
+        document.getElementById('loading').style.display = 'none';
     })
     .catch(error => {
         console.error("An error occurred while fetching data:", error);

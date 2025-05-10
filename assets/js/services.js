@@ -22,13 +22,27 @@ let minPage = 1;
 let maxPage = 18;
 let currentPage = 1;
 
-function animeGoing(pages) {
+function animeGoing(pages, direction = null) {
     document.getElementById('loading').style.display = 'flex';
     checkUrl('https://sheepbrand.com/sheepbrandftp/api/animegoing?pages=' + pages)
     .then(data => {
         if (data && data.result) {
             const animegoingContainer = document.getElementById('anime-going');
             animegoingContainer.innerHTML = '';
+            if (data.result.length === 0) {
+                if (direction === 'next' && currentPage < maxPage) {
+                    currentPage++;
+                    animeGoing(currentPage, 'next');
+                    return;
+                } else if (direction === 'prev' && currentPage > minPage) {
+                    currentPage--;
+                    animeGoing(currentPage, 'prev');
+                    return;
+                } else {
+                    alert('Halaman tidak ada.');
+                    return;
+                }
+            }
             data.result.forEach(anime => {
                 const animegoingSection = document.createElement('figure');
                 animegoingSection.classList.add('row');
@@ -58,7 +72,7 @@ function animeGoing(pages) {
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentPage > minPage) {
         currentPage--;
-            animeGoing(currentPage);
+            animeGoing(currentPage, 'prev');
     } else {
         alert('Ini adalah halaman pertama.');
     }
@@ -68,7 +82,7 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentPage < maxPage) {
         currentPage++;
-            animeGoing(currentPage);
+            animeGoing(currentPage, 'next');
     } else {
         alert('Ini adalah halaman terakhir.');
     }

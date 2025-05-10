@@ -570,6 +570,10 @@ footer {
     border-radius: 1rem;
 }
 
+.container .project-services .show-eps #back-btn:hover {
+    color: var(--p2);
+}
+
 #stream-title {
     margin-bottom: 2rem;
 }
