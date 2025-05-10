@@ -18,6 +18,8 @@ function checkUrl(url) {
 }
 
 // Animegoing
+let minPage = 1;
+let maxPage = 18;
 let currentPage = 1;
 
 function animeGoing(pages) {
@@ -45,29 +47,34 @@ function animeGoing(pages) {
                     const animeUrl = e.target.getAttribute('data-url');
                     window.location.href = 'anime-streaming.html';
                     localStorage.setItem('animeUrlEps', animeUrl);
-                    // const showEpsContainer = e.target.closest('figure').querySelector('.show-eps');
-                    // if (showEpsContainer.innerHTML === '') {
-                    //     animeEps(animeUrl, showEpsContainer);
-                    // } else {
-                    //     showEpsContainer.innerHTML = '';
-                    // }
                 });
-            });
-
-            // Tombol Halaman Sebelumnya
-            document.getElementById('prevBtn').addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    animeGoing(currentPage);
-                }
-            });
-
-            // Tombol Halaman Selanjutnya
-            document.getElementById('nextBtn').addEventListener('click', () => {
-                currentPage++;
-                animeGoing(currentPage);
             });
         }
     });
     
 }
+
+// Tombol Halaman Sebelumnya
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > minPage) {
+        currentPage--;
+            animeGoing(currentPage);
+    } else {
+        alert('Ini adalah halaman pertama.');
+    }
+});
+
+// Tombol Halaman Selanjutnya
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < maxPage) {
+        currentPage++;
+            animeGoing(currentPage);
+    } else {
+        alert('Ini adalah halaman terakhir.');
+    }
+});
+
+setTimeout(function() {
+    localStorage.clear();
+    console.log('Local Storage Dihapus.');
+}, 600000);

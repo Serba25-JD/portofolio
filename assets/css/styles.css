@@ -523,23 +523,55 @@ footer {
 .container .project-services .show-eps {
     text-align: center;
 }
-.container .project-services .show-eps .eps-title nav ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 1rem;
+
+.container .project-services .show-eps .eps-desc {
     margin: 2rem 0;
 }
-.container .project-services .show-eps .eps-title nav ul li {
-    margin: 1rem 0;
-    font-size: 1rem;
-    font-weight: 800;
-    padding: 0.5rem;
-    cursor: pointer;
-    text-align: center;
+
+.container .project-services .show-eps .eps-desc h3 {
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
-.container .project-services .show-eps .eps-title nav ul li:hover {
+.container .project-services .show-eps .eps-desc p {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.container .project-services .show-eps .eps-title {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.container .project-services .show-eps .eps-title .title-row {
     background-color: var(--primary);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.container .project-services .show-eps .eps-title .title-row img {
+    width: 20%;
+    height: auto;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.container .project-services .show-eps .eps-title .title-row img:hover {
+    background-color: var(--p2);
+}
+
+.container .project-services .show-eps #back-btn {
+    margin: 3rem 0;
+    padding: 1rem;
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+#stream-title {
+    margin-bottom: 2rem;
 }
 
 #anime-stream {

@@ -21,11 +21,11 @@ function checkUrl(url) {
 const animeUrlEps = localStorage.getItem('animeUrlEps');
 function animeEps(animeUrlEps) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animelink?url=https://riie.stream/' + animeUrlEps)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animelink?url=' + animeUrlEps)
     .then(data => {
         if (data && data.result) {
-            // const showEpsContainer = document.getElementById('show-eps');
-            // showEpsContainer.innerHTML = '';
+            const titles = document.querySelector('title');
+            titles.innerHTML = `${data.result.title}`;
             const animeEpsContainer = document.getElementById('show-desc');
             animeEpsContainer.innerHTML = '';
             animeEpsContainer.innerHTML = `
@@ -37,14 +37,15 @@ function animeEps(animeUrlEps) {
                 <p> ${data.result.desc} </p>
             </article>
             <article class="eps-title">
-                <nav>
-                    <ul>
-                        ${data.result.data.map(animeEps => {
-                            return `
-                            <li> <a href="#" class="view-eps" data-url=${animeEps.url} target="_blank" rel="noopener noreferrer"> ${animeEps.eps} </a> </li>
-                            `;
-                        }).join('')}
+                 ${data.result.data.map(animeEps => {
+                    return `
+                    <figure class="title-row">
+                        <img src="image/icons-svg/play.svg" width="24" height="24" alt="play" loading="lazy" class="view-eps" data-url="${animeEps.url}" />
+                        <figcaption> ${animeEps.eps} </figcaption>
+                    </figure> `;
+                }).join('')}
             </article>
+            <a href="layanan.html#services" id="back-btn" rel="noopener noreferrer"> Kembali </a>
             `;
             document.getElementById('loading').style.display = 'none';
             document.querySelectorAll('.view-eps').forEach(link => {
@@ -52,55 +53,70 @@ function animeEps(animeUrlEps) {
                     e.preventDefault();
                     const animeUrlView = e.target.getAttribute('data-url');
                     animeEpsView(animeUrlView);
-                    // window.location.href = 'anime-streaming.html';
-                    // localStorage.setItem('animeUrlView', animeUrlView);
                 });
             });
         }
     });
-    setTimeout(function() {
-        localStorage.clear();
-        console.log('Local Storage Dihapus.');
-    }, 600000); 
+
 }
 
-
-// const animeUrlView = localStorage.getItem('animeUrlView');
 function animeEpsView(url) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animestream?url=https://riie.stream/' + url)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animestream?url=' + url)
     .then(data => {
         if (data && data.result) {
-            // const titles = document.querySelector('title');
-            // titles.innerHTML = `${results.title}`;
             const animeEpsViewContainer = document.getElementById('anime-stream');
-            animeEpsViewContainer.classList.toggle('active');
-            const animeEpsViewIframe = document.getElementById('anime-stream-video');
-            const iframe = document.createElement('iframe');
-            if (iframe.innerHTML === '') {
-                iframe.width = "560";
-                iframe.height = "315";
-                iframe.src = data.result.url;
-                iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
-                iframe.allowFullscreen = true;
-                iframe.onerror = function() {
+            const headerElements = document.getElementById('stream-title');
+            headerElements.innerHTML = `${data.result.title}`;
+            const animeEpsView = document.getElementById('anime-stream-video');
+            const iframe = animeEpsView.querySelector('iframe');
+            if (iframe) {
+                animeEpsViewContainer.classList.remove('active');
+                document.getElementById('loading').style.display = 'flex';
+                iframe.contentWindow.postMessage('checkDebugger', '*');
+                window.addEventListener('message', (event) => {
+                    if (event.data === 'checkDebugger') {
+                        console.log('Debugger check received in iframe!');
+                    }
+                });
+                if (iframe.src !== data.result.url) {
+                    iframe.src = data.result.url;
+                    document.getElementById('loading').style.display = 'none';
+                    animeEpsViewContainer.classList.toggle('active');
+                }
+                iframe.onerror = function () {
                     player_error();
-                };
-                animeEpsViewIframe.appendChild(iframe);
-                document.getElementById('loading').style.display = 'none';
+                }
             } else {
-                console.log('error');
+                document.getElementById('loading').style.display = 'flex';
+                animeEpsViewContainer.classList.toggle('active');
+                const newIframe = document.createElement('iframe');
+                newIframe.width = '1280';
+                newIframe.height = '720';
+                newIframe.src = data.result.url;
+                newIframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+                newIframe.allowFullScreen = true;
+                newIframe.loading = 'lazy';
+                newIframe.onerror = function () {
+                    player_error();
+                }
+                animeEpsView.appendChild(newIframe);
+                document.getElementById('loading').style.display = 'none';
             }
-            // animeEpsViewIframe.innerHTML = `
-            // <iframe width="560" height="315" src="${data.result.url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> `;
-            // document.getElementById('loading').style.display = 'none';
         }
     })
+    .catch(error => {
+        console.error("An error occurred while fetching data:", error);
+        document.getElementById('loading').style.display = 'none';
+    });
 }
+
+setTimeout(function() {
+    localStorage.clear();
+    console.log('Local Storage Dihapus.');
+}, 600000);
 
 function player_error() {
     console.error("An error occurred while loading the player.");
     document.getElementById('loading').style.display = 'none';
 }
-
-// animeEpsView(animeUrlView);
