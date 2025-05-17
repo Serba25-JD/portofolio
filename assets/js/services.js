@@ -26,7 +26,7 @@ function checkUrl(url) {
 
 // Animegoing
 let minPageAnime = 1;
-let maxPageAnime = 18;
+let maxPageAnime = 4;
 let currentPageAnime = 1;
 
 function animeGoing(pages, direction = null) {
