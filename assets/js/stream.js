@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     animeEps(animeUrlEps);
+
+    // Function
+    setTimeout(function() {
+        localStorage.clear();
+        console.log('Local Storage Dihapus.');
+    }, 600000);
+    
+    function player_error() {
+        console.error("An error occurred while loading the player.");
+        document.getElementById('loading').style.display = 'none';
+    }
 });
 
 // Check Url Response 
@@ -29,12 +40,8 @@ function animeEps(animeUrlEps) {
             const animeEpsContainer = document.getElementById('show-desc');
             animeEpsContainer.innerHTML = '';
             animeEpsContainer.innerHTML = `
-            <figure>
-                <img src="${data.result.image}" alt="${data.result.title} width="225" height="318" loading=lazy />
-            </figure>
             <article class="eps-desc">
                 <h3> Sinopsis ${data.result.title} </h3>
-                <p> ${data.result.desc} </p>
             </article>
             <article class="eps-title">
                  ${data.result.data.map(animeEps => {
@@ -106,14 +113,4 @@ function animeEpsView(url) {
         console.error("An error occurred while fetching data:", error);
         document.getElementById('loading').style.display = 'none';
     });
-}
-
-setTimeout(function() {
-    localStorage.clear();
-    console.log('Local Storage Dihapus.');
-}, 600000);
-
-function player_error() {
-    console.error("An error occurred while loading the player.");
-    document.getElementById('loading').style.display = 'none';
 }

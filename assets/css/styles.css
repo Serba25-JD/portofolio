@@ -476,6 +476,11 @@ footer {
     background-color: var(--primary);
     text-align: center;
     border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    align-items: center;
+    align-content: space-between;
 }
 
 .container .project-services .contents .row img {
