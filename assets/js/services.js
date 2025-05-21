@@ -60,7 +60,7 @@ function animeGoing(pages, direction = null) {
                         <summary> Klik untuk menampilkan detail </summary>
                         <p> ${anime.eps} : Update ${anime.update}</p>
                     </details>
-                    <button class="anime-list-eps" data-url="${anime.url}"> Episode </button>
+                    <button class="anime-list-eps" data-url="${anime.url}" img-src="${anime.image}"> Episode </button>
                 `;
                 animegoingContainer.appendChild(animegoingSection);
                 document.getElementById('loadinganime').style.display = 'none';
@@ -70,8 +70,10 @@ function animeGoing(pages, direction = null) {
             document.querySelectorAll('.anime-list-eps').forEach(link => {
                 link.addEventListener('click', function(e) {
                     const animeUrl = e.target.getAttribute('data-url');
-                    window.location.href = 'anime-streaming.html';
+                    const animeImgURL = e.target.getAttribute('img-src');
                     localStorage.setItem('animeUrlEps', animeUrl);
+                    localStorage.setItem('animeImgUrl', animeImgURL);
+                    window.location.href = 'anime-streaming.html';
                 });
             });
         }
@@ -141,8 +143,8 @@ function movieGoing(pages, direction = null) {
             document.querySelectorAll('.movie-list-eps').forEach(link => {
                 link.addEventListener('click', function(e) {
                     const movieUrl = e.target.getAttribute('data-url');
-                    window.location.href = 'movie-streaming.html';
                     localStorage.setItem('movieUrlEps', movieUrl);
+                    window.location.href = 'movie-streaming.html';
                 });
             });
         }

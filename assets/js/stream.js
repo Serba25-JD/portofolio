@@ -1,5 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    animeEps(animeUrlEps);
+    const currentPages = window.location.pathname;
+    if (currentPages.includes('anime-streaming.html')) {
+        const animeUrlEps = localStorage.getItem('animeUrlEps');
+        if (!animeUrlEps) {
+            console.error('animeUrlEps is null or undefined.');
+        } else {
+            animeEps(animeUrlEps);
+        }
+    }
+    if (currentPages.includes('movie-streaming.html')) {
+        const movieUrlEps = localStorage.getItem('movieUrlEps');
+        if (!movieUrlEps) {
+            console.error('movieUrlEps is null or undefined.');
+        } else {
+            movieEps(movieUrlEps);
+        }
+    }
+
 
     // Function
     setTimeout(function() {
@@ -31,23 +48,30 @@ function checkUrl(url) {
 // Anime Episode
 const animeUrlEps = localStorage.getItem('animeUrlEps');
 function animeEps(animeUrlEps) {
+    if (!animeUrlEps) {
+        console.error('animeUrlEps is null or undefined.');
+        document.getElementById('loading').style.display = 'none';
+        return;
+    }
     document.getElementById('loading').style.display = 'flex';
     checkUrl('https://sheepbrand.com/sheepbrandftp/api/animelink?url=' + animeUrlEps)
     .then(data => {
         if (data && data.result) {
             const titles = document.querySelector('title');
+            const img = localStorage.getItem('animeImgUrl');
             titles.innerHTML = `${data.result.title}`;
             const animeEpsContainer = document.getElementById('show-desc');
             animeEpsContainer.innerHTML = '';
             animeEpsContainer.innerHTML = `
             <article class="eps-desc">
-                <h3> Sinopsis ${data.result.title} </h3>
+                <img src="https://sheepbrand.com/sheepbrandftp${img}" alt="${data.result.title}" width="225" height="318" loading="lazy" />
+                <h3> ${data.result.title} </h3>
             </article>
             <article class="eps-title">
                  ${data.result.data.map(animeEps => {
                     return `
                     <figure class="title-row">
-                        <img src="image/icons-svg/play.svg" width="24" height="24" alt="play" loading="lazy" class="view-eps" data-url="${animeEps.url}" />
+                        <img src="image/icons-svg/play.svg" width="24" height="24" alt="play" loading="lazy" class="view-eps-anime" data-url="${animeEps.url}" />
                         <figcaption> ${animeEps.eps} </figcaption>
                     </figure> `;
                 }).join('')}
@@ -55,7 +79,7 @@ function animeEps(animeUrlEps) {
             <a href="layanan.html#services" id="back-btn" rel="noopener noreferrer"> Kembali </a>
             `;
             document.getElementById('loading').style.display = 'none';
-            document.querySelectorAll('.view-eps').forEach(link => {
+            document.querySelectorAll('.view-eps-anime').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const animeUrlView = e.target.getAttribute('data-url');
@@ -67,6 +91,7 @@ function animeEps(animeUrlEps) {
 
 }
 
+// Anime View
 function animeEpsView(url) {
     document.getElementById('loading').style.display = 'flex';
     checkUrl('https://sheepbrand.com/sheepbrandftp/api/animestream?url=' + url)
@@ -113,4 +138,55 @@ function animeEpsView(url) {
         console.error("An error occurred while fetching data:", error);
         document.getElementById('loading').style.display = 'none';
     });
+}
+
+// Movie Episode
+const movieUrlEps = localStorage.getItem('movieUrlEps');
+function movieEps(url) {
+    if (!movieUrlEps) {
+        console.error('movieUrlEps is null or undefined.');
+        document.getElementById('loading').style.display = 'none';
+        return;
+    }
+    document.getElementById('loading').style.display = 'flex';
+    checkUrl('https://sheepbrand.com/sheepbrandftp/api/movielink?url=' + url)
+    .then(data => {
+        if(data && data.result) {
+            const movieEpsContainer = document.getElementById('show-desc');
+            movieEpsContainer.innerHTML = '';
+            movieEpsContainer.innerHTML = `
+            <article class="eps-title">
+                 ${data.result.map(movieEps => {
+                    return `
+                    <figure class="title-row">
+                        <img src="image/icons-svg/play.svg" width="24" height="24" alt="play" loading="lazy" class="view-eps-movie" data-url="${movieEps.url}" />
+                        <figcaption> ${movieEps.server} </figcaption>
+                    </figure> `;
+                }).join('')}
+            </article> 
+            <a href="layanan.html#services" id="back-btn" rel="noopener noreferrer"> Kembali </a>
+            `;
+            document.getElementById('loading').style.display = 'none';
+            document.querySelectorAll('.view-eps-movie').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const movieUrlView = e.target.getAttribute('data-url');
+                    movieEpsView(movieUrlView);
+                });
+            });
+        }   
+    })
+    .catch(error => {
+        console.error("An error occurred while fetching data:", error);
+        document.getElementById('loading').style.display = 'none';
+    });
+}
+
+// Movie View
+function movieEpsView(url) {
+    document.getElementById('loading').style.display = 'flex';
+    setTimeout(() => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        document.getElementById('loading').style.display = 'none';
+    }, 500);
 }

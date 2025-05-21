@@ -579,10 +579,12 @@ footer {
     color: var(--p2);
 }
 
+/* Function Stream */
 #stream-title {
     margin-bottom: 2rem;
 }
 
+/* Anime Stream Function */
 #anime-stream {
     display: none;
 }
