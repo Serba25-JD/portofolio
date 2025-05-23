@@ -26,39 +26,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap" rel="preconnect">
     <!-- Favicon -->
-    <link rel="icon" href="image/favicon.ico"type="image/x-icon">
+    <link rel="icon" href="../image/favicon.ico"type="image/x-icon">
     <!-- Vanila CSS -->
-    <link rel="preload" href="assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="../assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
     <!-- Reponsive CSS -->
-    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="../assets/css/responsive.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
     <header id="navbar">
-        <a href="index.html"> <img src="image/logo-header.webp" width="200" height="60" alt="Logo" id="logo" loading="eager" /> </a>
+        <a href="../index.html"> <img src="../image/logo-header.webp" width="200" height="60" alt="Logo" id="logo" loading="eager" /> </a>
         <nav>
             <ul>
-                <li><a href="index.html#home"> Beranda </a></li>
-                <li><a href="index.html#about"> Tentang </a></li>
-                <li><a href="index.html#project"> Proyek </a></li>
-                <li><a href="index.html#contact"> Kontak </a></li>
-                <li> <img src="image/icons-svg/x.svg" width="24" height="24" alt="x" loading="lazy" id="menu-close" /> </li>
+                <li><a href="../index.html#home"> Beranda </a></li>
+                <li><a href="../index.html#about"> Tentang </a></li>
+                <li><a href="../index.html#project"> Proyek </a></li>
+                <li><a href="../index.html#contact"> Kontak </a></li>
+                <li> <img src="../image/icons-svg/x.svg" width="24" height="24" alt="x" loading="lazy" id="menu-close" /> </li>
             </ul>
         </nav>
         <aside class="social">
             <ul>
-                <li><a href="https://www.instagram.com/je.onlyone_" target="_blank" rel="noopener noreferrer"> <img src="image/icons-svg/logo-instagram.svg" width="100" height="100" alt="instagram-logo" loading="lazy" /> </a></li>
-                <li><a href="https://discord.com/users/jeremi_salvatores" target="_blank" rel="noopener noreferrer"> <img src="image/icons-svg/logo-discord.svg" width="100" height="100" alt="discord-logo" loading="lazy" /> </a></li>
-                <li><a href="https://github.com/Serba25-JD" target="_blank" rel="noopener noreferrer"> <img src="image/icons-svg/logo-github.svg" alt="github-logo" width="100" height="100" loading="lazy" /> </a></li>
+                <li><a href="https://www.instagram.com/je.onlyone_" target="_blank" rel="noopener noreferrer"> <img src="../image/icons-svg/logo-instagram.svg" width="100" height="100" alt="instagram-logo" loading="lazy" /> </a></li>
+                <li><a href="https://discord.com/users/jeremi_salvatores" target="_blank" rel="noopener noreferrer"> <img src="../image/icons-svg/logo-discord.svg" width="100" height="100" alt="discord-logo" loading="lazy" /> </a></li>
+                <li><a href="https://github.com/Serba25-JD" target="_blank" rel="noopener noreferrer"> <img src="../image/icons-svg/logo-github.svg" alt="github-logo" width="100" height="100" loading="lazy" /> </a></li>
             </ul>
         </aside>
     </header>
 
-    <img src="image/icons-svg/menu.svg" width="24" height="24" alt="menu" loading="lazy" id="menu" />
+    <img src="../image/icons-svg/menu.svg" width="24" height="24" alt="menu" loading="lazy" id="menu" />
 
     <main>
         <section class="container">
-            <article class="project-services" id="movie-desc">
-                <h2> Movie Informasi </h2>
+            <article class="project-services" id="anime-desc">
+                <h2> Anime Informasi </h2>
                 <section class="loading" id="loading">
                     <div class="spinner"></div>
                 </section>
@@ -67,11 +67,20 @@
             </article>
         </section>
 
-        <a href="index.html#home" class="scroll-top"> <img src="image/icons-svg/chevrons-up.svg" width="24" height="24" alt="checvrons-up" loading="lazy" /> </a>
+        <section class="container" id="project-stream">
+            <section class="loading" id="loading">
+                <div class="spinner"></div>
+            </section>
+            <section class="video" id="project-stream-video">
+                <h3 id="stream-title"> </h3>
+            </section>
+        </section>
+
+        <a href="../services/anime-streaming.html#anime-desc" class="scroll-top"> <img src="../image/icons-svg/chevrons-up.svg" width="24" height="24" alt="checvrons-up" loading="lazy" /> </a>
 
     </main>
 
-<script src="assets/js/script.js" defer></script>
-<script src="assets/js/stream.js" defer></script>
+<script src="../assets/js/script.js" defer></script>
+<script src="../assets/js/stream.js" defer></script>
 </body>
 </html>
