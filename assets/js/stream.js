@@ -62,7 +62,7 @@ function animeEps(animeUrlEps) {
         return;
     }
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animelink?url=' + animeUrlEps)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/animelink?url=' + animeUrlEps)
     .then(data => {
         if (data && data.result) {
             const titles = document.querySelector('title');
@@ -102,7 +102,7 @@ function animeEps(animeUrlEps) {
 // Anime View
 function animeEpsView(url) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animestream?url=' + url)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/animestream?url=' + url)
     .then(data => {
         if (data && data.result) {
             const animeEpsViewContainer = document.getElementById('project-stream');
@@ -157,7 +157,7 @@ function movieEps(url) {
         return;
     }
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/movielink?url=' + url)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/movielink?url=' + url)
     .then(data => {
         if(data && data.result) {
             const movieEpsContainer = document.getElementById('show-desc');
@@ -216,7 +216,7 @@ function drakorEps(url) {
         return;
     }
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/drakorlink?url=' + url)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/drakorlink?url=' + url)
     .then(data => {
         if(data && data.result) {
             const drakorEpsContainer = document.getElementById('show-desc');
@@ -271,7 +271,7 @@ function drakorEps(url) {
 // Drakor View
 function drakorEpsView(url) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/drakorstream?url=' + url)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/drakorstream?url=' + url)
     .then(data => {
         if (data && data.result) {
             const drakorEpsViewContainer = document.getElementById('project-stream');

@@ -62,3 +62,51 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(animateScroll);
     }
 });
+
+// Proteksi Developer
+(function(){
+  function _0x4c3a(_0x57bc){return atob(_0x57bc);}
+  
+  const _0x2d9f = {
+    ctxmenu: _0x4c3a('Y29udGV4dG1lbnQ='),
+    prevent: 'preventDefault',
+    keydown: _0x4c3a('a2V5ZG93bg=='),
+    f12: _0x4c3a('RjEy'),
+    ctrl: 'ctrlKey',
+    shift: 'shiftKey',
+    keyI: _0x4c3a('SQ=='),
+    keyJ: _0x4c3a('Sg=='),
+    keyU: _0x4c3a('VQ=='),
+    google: _0x4c3a('aHR0cHM6Ly9zZXJiYTI1LWpkLmdpdGh1Yi5pby9wb3J0b2ZvbGlvLw=='),
+    selectstart: _0x4c3a('c2VsZWN0c3RhcnQ='),
+    dragstart: _0x4c3a('ZHJhZ3N0YXJ0'),
+    addEventListener: 'addEventListener'
+  };
+
+  document[_0x2d9f.addEventListener](_0x2d9f.ctxmenu, function(e) {
+    e[_0x2d9f.prevent]();
+  });
+
+  document[_0x2d9f.addEventListener](_0x2d9f.keydown, function(e) {
+    if (
+      e.key === _0x2d9f.f12 ||
+      (e[_0x2d9f.ctrl] && e[_0x2d9f.shift] && (e.key === _0x2d9f.keyI || e.key === _0x2d9f.keyJ)) ||
+      (e[_0x2d9f.ctrl] && e.key === _0x2d9f.keyU)
+    ) {
+      e[_0x2d9f.prevent]();
+      window.location.href = _0x2d9f.google;
+    }
+  });
+
+  setInterval(function() {
+    const start = new Date();
+    debugger;
+    const end = new Date();
+    if (end - start > 150) {
+      window.location.href = _0x2d9f.google;
+    }
+  }, 1000);
+
+  document[_0x2d9f.addEventListener](_0x2d9f.selectstart, function(e){e.preventDefault();});
+  document[_0x2d9f.addEventListener](_0x2d9f.dragstart, function(e){e.preventDefault();});
+})();

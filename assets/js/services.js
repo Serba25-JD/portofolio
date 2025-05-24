@@ -108,7 +108,7 @@ let currentPageAnime = 1;
 
 function animeGoing(pages, direction = null) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/animegoing?pages=' + pages)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/animegoing?pages=' + pages)
     .then(data => {
         if (data && data.result) {
             const animegoingContainer = document.getElementById('anime-going');
@@ -170,7 +170,7 @@ let currentPageMovie = 1;
 
 function movieGoing(pages, direction = null) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/moviegoing?pages=' + pages)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/moviegoing?pages=' + pages)
     .then(data => {
         if (data && data.result) {
             const moviegoingContainer = document.getElementById('movie-going');
@@ -230,7 +230,7 @@ let currentPageDrakor = 1;
 
 function drakorGoing(pages, direction = null) {
     document.getElementById('loading').style.display = 'flex';
-    checkUrl('https://sheepbrand.com/sheepbrandftp/api/drakorgoing?pages=' + pages)
+    checkUrl('https://sheepbrand.com/sheepbrandftp/public/drakorgoing?pages=' + pages)
     .then(data => {
         if (data && data.result) {
             const drakorgoingContainer = document.getElementById('drakor-going');
