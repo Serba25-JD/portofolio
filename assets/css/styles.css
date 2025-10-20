@@ -87,7 +87,7 @@ body {
     bottom: 0;
     width: 100%;
     background-color: var(--button);
-    padding: 2rem;
+    padding: 1rem;
 }
 
 /* #header-content {
@@ -152,10 +152,12 @@ body {
     background-color: var(--bg);
     max-width: 50%;
     margin-left: 45rem;
+    z-index: 9999999;
 }
 
 #main-content .container {
     margin-top: 1rem;
+    padding-bottom: 5rem;
 }
 
 #main-content .container h2 {
@@ -317,6 +319,7 @@ body {
     background-color: var(--button);
     padding: 0.5rem;
     cursor: pointer;
+    z-index: 9999;
 }
 
 #main-content #works #works-nav-content .works-nav-content-puzzle {

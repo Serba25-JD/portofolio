@@ -7,6 +7,9 @@
         left: 0;
         width: 30%;
         background: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
     }
     #header-content.active {
         background-color: #BDC3C7;
@@ -19,8 +22,15 @@
         max-width: 100%;
         padding: 1rem;
     }
+    #main-content #home {
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
     #contact .contact-container {
         flex-wrap: wrap;
+    }
+    #main-content #contact .contact-container #contact-content-right .content-contact-right-group {
+        margin-bottom: 1rem;
     }
     #footer-content {
         margin: 0;
@@ -62,11 +72,15 @@
 @media (min-width: 601px) and (max-width: 900px) {
     html, body {
         font-size: 80%;
+        position: relative;
     }
     #header-content {
         left: 0;
         width: 30%;
         background: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
     }
     #header-content.active {
         background-color: #BDC3C7;
@@ -78,6 +92,10 @@
         margin: 0;
         max-width: 100%;
         padding: 1rem;
+    }
+    #main-content #home {
+        justify-content: flex-start;
+        align-items: flex-end;
     }
     #contact .contact-container {
         flex-wrap: wrap;
