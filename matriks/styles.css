@@ -26,49 +26,51 @@ body {
     background-color: #f4f7fb;
 }
 
-header {
+#content-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-header h1 {
-    font-size: 2rem;
+#content-header h1 {
+    font-size: 3rem;
     font-weight: 900;
     margin-bottom: 1rem;
 }
 
-header p {
-    font-size: 1rem;
+#content-header p {
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-main {
+#content-main {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 5rem;
+    padding: 2rem;
 }
 
-.left {
+/* Left Content */
+.left-container .left {
     margin-bottom: 2rem;
 }
 
-.left h2 {
+.left-container .left h2 {
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-.left div {
+.left-container .left div {
     margin-bottom: 1rem;
 }
 
-.left div p {
-    font-size: 0.5rem;
+.left-container .left div p {
+    font-size: 1rem;
     font-weight: 800;
     margin-bottom: 0.2rem;
 }
 
-.left div input {
+.left-container .left div input {
     border: none;
     background: none;
     background-color: #cde9ce;
@@ -79,30 +81,36 @@ main {
     padding: 1rem 1rem;
 }
 
-.left div input[type="number"] {
+.left-container .left div input[type="number"] {
     font-size: 1rem;
     font-weight: 900;
 }
 
-.left div input::placeholder {
+.left-container .left div input::placeholder {
     font-size: 0.7rem;
     font-weight: 900;
 }
 
-.left div #next {
+.left-container .left div #next {
     background: none;
     border: none;
     background-color: #4CAF50;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
-    font-size: 0.6rem;
+    font-size: 1rem;
     font-weight: 900;
 }
 
+/* Mid Content */
 .mid-container .mid h2 {
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
+}
+
+.mid-container .mid p {
+    font-size: 1rem;
+    font-weight: 800;
 }
 
 .mid-container .mid textarea {
@@ -127,7 +135,7 @@ main {
     background-color: #4CAF50;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
-    font-size: 0.6rem;
+    font-size: 1rem;
     font-weight: 900;
 }
 
@@ -142,4 +150,151 @@ main {
 .mid-container .mid option {
     font-size: 0.8rem;
     font-weight: 800;
+}
+
+.mid-container .mid #operator {
+  width: 200px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 0.5rem;
+  background-color: #f0f8ff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mid-container .mid#operator:hover {
+  border-color: #0056b3;
+  background-color: #e6f7ff;
+}
+
+.mid-container .mid #operator:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.mid-container .mid #operator::-ms-expand {
+  display: none;
+}
+
+.mid-container .mid #operator option {
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #f0f8ff;
+  color: #333;
+  border: none;
+}
+
+.mid-container .mid #operator option:hover {
+  background-color: #e6f7ff;
+  color: #007bff;
+}
+
+.mid-container .mid #operator, #operator option {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Right Content */
+.right-container p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.right-container .matrix-table {
+    margin: 1rem auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+    table-layout: fixed;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.right-container .matrix-table th, .matrix-table td {
+    padding: 0.1rem 0.1rem;
+    text-align: center;
+    font-size: 1.2em;
+    border: 1px solid #ecf0f1;
+}
+
+.right-container .matrix-table th {
+    background-color: #2980b9;
+    color: white;
+    font-weight: bold;
+}
+
+.right-container .matrix-table td {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: background-color 0.3s ease;
+}
+
+.right-container .matrix-table td:hover {
+    background-color: #dcdde1;
+}
+
+.right-container #reset-sum {
+    border: none;
+    background: none;
+    background-color: #4CAF50;
+    padding: 0.2rem 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Footer */
+footer p {
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+/* Alert */
+.alert-container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-container .alert-content {
+    background-color: #f4f7fb;
+    text-align: center;
+    width: 25%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border: 0.1rem solid var(--hover);
+}
+
+.alert-container .alert-content #close-alert {
+    border: none;
+    background: none;
+    background-color: #4CAF50;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #000;
+    font-weight: 600;
 }
