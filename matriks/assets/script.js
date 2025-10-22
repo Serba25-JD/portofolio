@@ -204,52 +204,160 @@ async function showMainContentRightLoad() {
     try {
         const response = await fetch('https://sukasehat.com/API/public/matriks', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         });
+        const json = await response.json();
         if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Request failed with status ${response.status}: ${errorText}`);
+            const errorMessage = json?.data?.result?.error || 'Terjadi kesalahan yang tidak diketahui.';
+            throw new Error(errorMessage);
         }
-        const result = await response.json();
-        const hasil = result.result.hasil;
-        let rightContainer = document.getElementById('right-container');
-        if (!rightContainer) {
-            rightContainer = document.createElement('section');
-            rightContainer.classList.add('right-container');
-            rightContainer.setAttribute('id', 'right-container');
-            const pText = document.createElement('p');
-            pText.textContent = `Hasil dari Matriks A (${barisA}x${kolomA}) ${operator} Matriks B (${barisB}x${kolomB}):`;
-            rightContainer.appendChild(pText);
+        const hasil = json.data.result.hasil;
+        const error = json.data.result.error;
+        if(error) {
+            showAlert(`${error}`);
         } else {
-            rightContainer.innerHTML = '';
-        }
-        // Matriks A
-        const pTextMatriksA = document.createElement('p');
-        pTextMatriksA.textContent = 'Matriks A:';
-        const tableA = createMatrixTable(matriksA);
-        // Matriks B
-        const pTextMatriksB = document.createElement('p');
-        pTextMatriksB.textContent = 'Matriks B:';
-        const tableB = createMatrixTable(matriksB);
-        // Result
-        const pResult = document.createElement('p');
-        pResult.textContent = 'Hasil Matriks:';
-        const tableResult = createMatrixTable(hasil);
-        // Button
-        const button = document.createElement('button');
-        button.type = 'reset';
-        button.id = 'reset-sum';
-        button.textContent = 'Reset';
-        // Append
-        rightContainer.append(pTextMatriksA, tableA, pTextMatriksB, tableB, pResult, tableResult, button);
-        midContainer.insertAdjacentElement('afterend', rightContainer);
-    } catch(error) {
-        showAlert('Silahkan masukkan angka yang benar.');
-    }
+            let rightContainer = document.getElementById('right-container');
+            if (!rightContainer) {
+                rightContainer = document.createElement('section');
+                rightContainer.classList.add('right-container');
+                rightContainer.setAttribute('id', 'right-container');
+                const pText = document.createElement('p');
+                pText.textContent = `Hasil dari Matriks A (${barisA}x${kolomA}) ${operator} Matriks B (${barisB}x${kolomB}):`;
+                rightContainer.appendChild(pText);
+            } else {
+                rightContainer.innerHTML = '';
+            }
+            // Matriks A
+            const pTextMatriksA = document.createElement('p');
+            pTextMatriksA.textContent = 'Matriks A:';
+            const tableA = createMatrixTable(matriksA);
+            // Matriks B
+            const pTextMatriksB = document.createElement('p');
+            pTextMatriksB.textContent = 'Matriks B:';
+            const tableB = createMatrixTable(matriksB);
+            // Result
+            const pResult = document.createElement('p');
+            pResult.textContent = 'Hasil Matriks:';
+            const tableResult = createMatrixTable(hasil);
+            // Button
+            const button = document.createElement('button');
+            button.type = 'reset';
+            button.id = 'reset-sum';
+            button.textContent = 'Reset';
+            // Append
+            rightContainer.append(pTextMatriksA, tableA, pTextMatriksB, tableB, pResult, tableResult, button);
+            midContainer.insertAdjacentElement('afterend', rightContainer);
+        };
+    } catch (error) {
+        showAlert(`${error.message}`);
+    };
     showResetContent();
+    // try {
+    //     const response = await fetch('https://sukasehat.com/API/public/matriks', {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify(data)
+    //     });
+    //     const text = await response.text();
+    //     let result;
+    //     try {
+    //         result = JSON.parse(text);
+    //     } catch (e) {
+    //         throw new Error(`Respon dari server tidak valid.`);
+    //     }
+    //     if (!response.ok) {
+    //         const errorMessage = result?.result?.error || `Terjadi kesalahan (status ${response.status})`;
+    //         throw new Error(errorMessage);
+    //     }
+    //     // const result = await response.json();
+    //     // const hasil = result.result.hasil;
+    //     const hasil = result.result.hasil;
+    //     let rightContainer = document.getElementById('right-container');
+    //     if (!rightContainer) {
+    //         rightContainer = document.createElement('section');
+    //         rightContainer.classList.add('right-container');
+    //         rightContainer.setAttribute('id', 'right-container');
+    //         const pText = document.createElement('p');
+    //         pText.textContent = `Hasil dari Matriks A (${barisA}x${kolomA}) ${operator} Matriks B (${barisB}x${kolomB}):`;
+    //         rightContainer.appendChild(pText);
+    //     } else {
+    //         rightContainer.innerHTML = '';
+    //     }
+    //     // Matriks A
+    //     const pTextMatriksA = document.createElement('p');
+    //     pTextMatriksA.textContent = 'Matriks A:';
+    //     const tableA = createMatrixTable(matriksA);
+    //     // Matriks B
+    //     const pTextMatriksB = document.createElement('p');
+    //     pTextMatriksB.textContent = 'Matriks B:';
+    //     const tableB = createMatrixTable(matriksB);
+    //     // Result
+    //     const pResult = document.createElement('p');
+    //     pResult.textContent = 'Hasil Matriks:';
+    //     const tableResult = createMatrixTable(hasil);
+    //     // Button
+    //     const button = document.createElement('button');
+    //     button.type = 'reset';
+    //     button.id = 'reset-sum';
+    //     button.textContent = 'Reset';
+    //     // Append
+    //     rightContainer.append(pTextMatriksA, tableA, pTextMatriksB, tableB, pResult, tableResult, button);
+    //     midContainer.insertAdjacentElement('afterend', rightContainer);
+        
+    // } catch (error) {
+    //     showAlert(`${error.message}.`);
+    // }
+    // showResetContent();
+    // try {
+    //     const response = await fetch('https://sukasehat.com/API/public/matriks', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(data)
+    //     });
+    //     if (!response.ok) {
+    //         const errorText = await response.text();
+    //         throw new Error(`Request failed with status ${response.status}: ${errorText}`);
+    //     }
+    //     const result = await response.json();
+    //     const hasil = result.result.hasil;
+    //     let rightContainer = document.getElementById('right-container');
+    //     if (!rightContainer) {
+    //         rightContainer = document.createElement('section');
+    //         rightContainer.classList.add('right-container');
+    //         rightContainer.setAttribute('id', 'right-container');
+    //         const pText = document.createElement('p');
+    //         pText.textContent = `Hasil dari Matriks A (${barisA}x${kolomA}) ${operator} Matriks B (${barisB}x${kolomB}):`;
+    //         rightContainer.appendChild(pText);
+    //     } else {
+    //         rightContainer.innerHTML = '';
+    //     }
+    //     // Matriks A
+    //     const pTextMatriksA = document.createElement('p');
+    //     pTextMatriksA.textContent = 'Matriks A:';
+    //     const tableA = createMatrixTable(matriksA);
+    //     // Matriks B
+    //     const pTextMatriksB = document.createElement('p');
+    //     pTextMatriksB.textContent = 'Matriks B:';
+    //     const tableB = createMatrixTable(matriksB);
+    //     // Result
+    //     const pResult = document.createElement('p');
+    //     pResult.textContent = 'Hasil Matriks:';
+    //     const tableResult = createMatrixTable(hasil);
+    //     // Button
+    //     const button = document.createElement('button');
+    //     button.type = 'reset';
+    //     button.id = 'reset-sum';
+    //     button.textContent = 'Reset';
+    //     // Append
+    //     rightContainer.append(pTextMatriksA, tableA, pTextMatriksB, tableB, pResult, tableResult, button);
+    //     midContainer.insertAdjacentElement('afterend', rightContainer);
+    // } catch(error) {
+    //     showAlert(`${result.result.error}.`);
+    // }
+    // showResetContent();
 }
 
 function createMatrixTable(matrix) {
