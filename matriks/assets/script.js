@@ -165,6 +165,7 @@ function showMainMidContentLoad() {
     section.append(divA, divB, divOperator, button);
     leftContainer.insertAdjacentElement('afterend', section);
     showMainContentRight();
+    scrollTag('mid-container');
 }
 // Mid END
 
@@ -176,6 +177,21 @@ function showMainContentRight() {
         const matriksB = document.getElementById('matriksB').value.split('\n').map(row => row.trim().split(' ').map(Number));
         const operator = document.getElementById('operator').value;
         if(matriksA && matriksB && operator) {
+            const loading = document.getElementById('loading-container');
+            if(loading) {
+                loading.style.display = 'flex';
+            } else {
+                const midContainer = document.getElementById('mid-container');
+                const divContainer = document.createElement('div');
+                divContainer.classList.add('loading-container');
+                divContainer.setAttribute('id', 'loading-container');
+                const divContent = document.createElement('div');
+                divContent.classList.add('loading-content');
+                divContainer.appendChild(divContent);
+                midContainer.insertAdjacentElement('afterend', divContainer);
+                const targetLoading = document.getElementById('loading-container');
+                targetLoading.style.display = 'flex';
+            }
             showMainContentRightLoad();
         } else {
             showAlert('Masukkan Matriks terlebih dahulu.');
@@ -248,10 +264,19 @@ async function showMainContentRightLoad() {
             // Append
             rightContainer.append(pTextMatriksA, tableA, pTextMatriksB, tableB, pResult, tableResult, button);
             midContainer.insertAdjacentElement('afterend', rightContainer);
+            const loading = document.getElementById('loading-container');
+            setTimeout(() => {
+                loading.style.display = 'none';
+            }, 500);
         };
     } catch (error) {
-        showAlert(`${error.message}`);
+        const loading = document.getElementById('loading-container');
+        setTimeout(() => {
+            loading.style.display = 'none';
+            showAlert(`${error.message}`);
+        }, 500);
     };
+    scrollTag('right-container');
     showResetContent();
     // try {
     //     const response = await fetch('https://sukasehat.com/API/public/matriks', {
@@ -439,4 +464,11 @@ function showAlertCloseButton() {
         const alert = document.getElementById('alert-container');
         alert.style.display = 'none';
     })
+}
+// Alert END
+
+// Scroll Tag
+function scrollTag(id) {
+    const tag = document.getElementById(id);
+    if(tag) tag.scrollIntoView({behavior: 'smooth'});
 }
