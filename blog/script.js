@@ -76,10 +76,10 @@ function showSelfPaced() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
+        const pdfUrl = encodeURIComponent('https://serba25-jd.github.io/portofolio/blog/pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
         const iframe = document.createElement('iframe');
-        // iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfUrl}&toolbar=0&textLayer=false&disableDownload=true`;
-        iframe.src = pdfUrl;
+        iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfUrl}&toolbar=0&textLayer=false&disableDownload=true`;
+        // iframe.src = pdfUrl;
         iframe.width = '100%';
         iframe.style.height = '100vh';
         iframe.loading = 'lazy';
@@ -104,10 +104,10 @@ function showSelfPaced() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        const pdfUrl = encodeURIComponent('pdf/Analisis Etika dan Teknologi dalam Kasus Korupsi Digital di Indonesia.pdf');
+        const pdfUrl = encodeURIComponent('https://serba25-jd.github.io/portofolio/blog/pdf/Analisis Etika dan Teknologi dalam Kasus Korupsi Digital di Indonesia.pdf');
         const iframe = document.createElement('iframe');
-        // iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfUrl}&toolbar=0&textLayer=false&disableDownload=true`;
-        iframe.src = pdfUrl;
+        iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfUrl}&toolbar=0&textLayer=false&disableDownload=true`;
+        // iframe.src = pdfUrl;
         iframe.width = '100%';
         iframe.style.height = '100vh';
         iframe.loading = 'lazy';
