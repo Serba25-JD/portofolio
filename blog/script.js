@@ -57,8 +57,8 @@ function showSelfPaced() {
         { 'title': 'Pertemuan 2', 'id': 'eye-kedua', 'judul': 'Analisis Etika dan Teknologi dalam kasus Korupsi Digital di Indonesia.'},
         { 'title': 'Pertemuan 3', 'id': 'eye-ketiga', 'judul': 'Merancang Pedoman Etika Digital di Lingkungan Kampus.'},
         { 'title': 'Pertemuan 4', 'id': 'eye-keempat', 'judul': 'Analisis Yuridis Kasus Korupsi Digital di Indonesia.'},
-        { 'title': 'Pertemuan 5', 'id': 'eye-kelima', 'judul': 'Apakah whistleblowing atau tindakan melaporkan atau membocorkan dugaan pelanggaran atau kecurangan yang terjadi di dalam suatu organisasi di lingkungan kerja merupakan tindakan etis?.'},
-        { 'title': 'Pertemuan 6', 'id': 'eye-keenam', 'judul': 'Apakah keamanan siber merupakan tanggung jawab moral atau teknis? Mahasiswa membuat argumentasi berdasarkan keempat prinsip etika TI.'},
+        { 'title': 'Pertemuan 5', 'id': 'eye-kelima', 'judul': 'Tugas 1: Analisis Dilema Etika. Tugas 2: Diskusi Kelompok.' },
+        { 'title': 'Pertemuan 6', 'id': 'eye-keenam', 'judul': 'Tugas 1: Analisis Kasus Etika Teknologi. Tugas 2: Diskusi topik.'},
     ]
     listData.forEach(data => {
         const divContent = document.createElement('div');
@@ -207,19 +207,27 @@ function documentFive() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        // const embed = document.createElement('embed');
-        // const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
-        // embed.src = pdfUrl;
-        // embed.type = 'application/pdf';
-        // embed.width = '100%';
-        // embed.height = '800px';
-        const p = document.createElement('p');
-        p.textContent = 'Belum dikerjakan';
+        const divDocumentContainer = document.createElement('div');
+        divDocumentContainer.classList.add('eye-content');
+        const listDocument = [
+            { 'judul': 'Analisis Dilema Etika', 'href': '#'},
+            { 'judul': 'Apakah whistleblowing atau tindakan melaporkan atau membocorkan dugaan pelanggaran atau kecurangan yang terjadi di dalam suatu organisasi di lingkungan kerja merupakan tindakan etis?.', 'href': '#' }
+        ]
+        listDocument.forEach(list => {
+            const divDocumentContent = document.createElement('div');
+            const h3 = document.createElement('h3');
+            h3.textContent = list.judul;
+            const a = document.createElement('a');
+            a.href = list.href;
+            a.textContent = 'Check Disini';
+            divDocumentContent.append(h3, a);
+            divDocumentContainer.appendChild(divDocumentContent);
+        })
         const button = document.createElement('button');
         button.type = 'reset';
         button.textContent = 'Tutup';
         button.setAttribute('id', 'close-btn');
-        divContent.append(p, button);
+        divContent.append(divDocumentContainer, button);
         divContainer.appendChild(divContent);
         container.insertAdjacentElement('beforeend', divContainer);
         closePopup();
@@ -236,19 +244,27 @@ function documentSix() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        // const embed = document.createElement('embed');
-        // const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
-        // embed.src = pdfUrl;
-        // embed.type = 'application/pdf';
-        // embed.width = '100%';
-        // embed.height = '800px';
-        const p = document.createElement('p');
-        p.textContent = 'Belum dikerjakan';
+        const divDocumentContainer = document.createElement('div');
+        divDocumentContainer.classList.add('eye-content');
+        const listDocument = [
+            { 'judul': 'Analisis Kasus Etika Teknologi', 'href': '#'},
+            { 'judul': 'Apakah keamanan siber merupakan tanggung jawab moral atau teknis? Mahasiswa membuat argumentasi berdasarkan keempat prinsip etika TI.', 'href': '#' }
+        ]
+        listDocument.forEach(list => {
+            const divDocumentContent = document.createElement('div');
+            const h3 = document.createElement('h3');
+            h3.textContent = list.judul;
+            const a = document.createElement('a');
+            a.href = list.href;
+            a.textContent = 'Check Disini';
+            divDocumentContent.append(h3, a);
+            divDocumentContainer.appendChild(divDocumentContent);
+        })
         const button = document.createElement('button');
         button.type = 'reset';
         button.textContent = 'Tutup';
         button.setAttribute('id', 'close-btn');
-        divContent.append(p, button);
+        divContent.append(divDocumentContainer, button);
         divContainer.appendChild(divContent);
         container.insertAdjacentElement('beforeend', divContainer);
         closePopup();

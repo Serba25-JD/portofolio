@@ -119,6 +119,30 @@ header h1 {
     cursor: pointer;
 }
 
+.eye-content {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    margin: auto;
+}
+
+.eye-content div {
+    flex: 1;
+    text-align: center;
+    background-color: var(--color-1);
+    padding: 1rem;
+}
+
+.eye-content div a {
+    text-decoration: none;
+    color: var(--color-3);
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background-color: var(--color-2);
+    margin: 1rem 0;
+}
+
 /* Animasi */
 @keyframes fadeIn {
   from {
