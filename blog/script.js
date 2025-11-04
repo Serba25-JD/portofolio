@@ -45,16 +45,25 @@ function showMain() {
 
 function showSelfPaced() {
     const main = document.getElementById('container-self-paced');
+    const divTitle = document.createElement('div');
+    const h2Title = document.createElement('h2');
+    h2Title.textContent = 'Pendidikan Anti Korupsi dan Etika Berteknologi';
+    divTitle.appendChild(h2Title);
+    main.appendChild(divTitle);
     const divContainer = document.createElement('div');
     divContainer.classList.add('self-paced-container');
     const listData = [
-        { 'id':'eye-pertama', 'judul': 'Bagaimana Anda memaknai kejujuran dan tanggung jawab dalam penggunaan teknologi digital di kehidupan sehari-hari ?'},
-        { 'id': 'eye-kedua', 'judul': 'Analisis Etika dan Teknologi dalam kasus Korupsi Digital di Indonesia.'}
+        { 'title': 'Pertemuan 1', 'id':'eye-pertama', 'judul': 'Bagaimana Anda memaknai kejujuran dan tanggung jawab dalam penggunaan teknologi digital di kehidupan sehari-hari ?'},
+        { 'title': 'Pertemuan 2', 'id': 'eye-kedua', 'judul': 'Analisis Etika dan Teknologi dalam kasus Korupsi Digital di Indonesia.'},
+        { 'title': 'Pertemuan 3', 'id': 'eye-ketiga', 'judul': 'Merancang Pedoman Etika Digital di Lingkungan Kampus.'},
+        { 'title': 'Pertemuan 4', 'id': 'eye-keempat', 'judul': 'Analisis Yuridis Kasus Korupsi Digital di Indonesia.'},
+        { 'title': 'Pertemuan 5', 'id': 'eye-kelima', 'judul': 'Apakah whistleblowing atau tindakan melaporkan atau membocorkan dugaan pelanggaran atau kecurangan yang terjadi di dalam suatu organisasi di lingkungan kerja merupakan tindakan etis?.'},
+        { 'title': 'Pertemuan 6', 'id': 'eye-keenam', 'judul': 'Apakah keamanan siber merupakan tanggung jawab moral atau teknis? Mahasiswa membuat argumentasi berdasarkan keempat prinsip etika TI.'},
     ]
     listData.forEach(data => {
         const divContent = document.createElement('div');
         const h2 = document.createElement('h2');
-        h2.textContent = 'Pendidikan Anti Korupsi dan Etika Berteknologi';
+        h2.textContent = data.title;
         const p = document.createElement('p');
         p.textContent = data.judul;
         const icon = document.createElement('i');
@@ -66,7 +75,19 @@ function showSelfPaced() {
     });
     main.appendChild(divContainer);
     feather.replace();
-    // Eye Pertama
+    showDocument();
+}
+
+function showDocument() {
+    documentFirst();
+    documentTwo();
+    documentThree();
+    documentFour();
+    documentFive();
+    documentSix();
+}
+
+function documentFirst() {
     const pertama = document.getElementById('eye-pertama');
     pertama.addEventListener('click', function() {
         const container = document.getElementById('container-self-paced');
@@ -76,45 +97,24 @@ function showSelfPaced() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        const pdfUrl = encodeURIComponent('https://serba25-jd.github.io/portofolio/blog/pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfUrl}&toolbar=0&textLayer=false&disableDownload=true`;
-        // iframe.src = pdfUrl;
-        iframe.width = '100%';
-        iframe.style.height = '100vh';
-        iframe.loading = 'lazy';
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('type', 'application/pdf');
-        // const canvas = document.createElement('canvas');
-        // canvas.setAttribute('id', 'pdf-canvas');
+        const embed = document.createElement('embed');
+        const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
+        embed.src = pdfUrl;
+        embed.type = 'application/pdf';
+        embed.width = '100%';
+        embed.height = '800px';
         const button = document.createElement('button');
         button.type = 'reset';
         button.textContent = 'Tutup';
         button.setAttribute('id', 'close-btn');
-        // divContent.append(canvas, button);
-        divContent.append(iframe, button);
+        divContent.append(embed, button);
         divContainer.appendChild(divContent);
         container.insertAdjacentElement('beforeend', divContainer);
-        // const pdfUrl = 'https://serba25-jd.github.io/portofolio/blog/pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf';
-        // const canvasContent = document.getElementById('pdf-canvas');
-        // pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-        // const ctx = canvasContent.getContext('2d');
-        // pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-        //     pdf.getPage(1).then(page => {
-        //         const viewport = page.getViewport({ scale: 1.5 });
-        //         canvas.height = viewport.height;
-        //         canvas.width = viewport.width;
-
-        //         const renderContext = {
-        //             canvasContext: ctx,
-        //             viewport: viewport
-        //         };
-        //         page.render(renderContext);
-        //     });
-        // });
         closePopup();
-    });
-    // Eye Kedua
+    })
+}
+
+function documentTwo() {
     const kedua = document.getElementById('eye-kedua');
     kedua.addEventListener('click', function() {
         const container = document.getElementById('container-self-paced');
@@ -124,70 +124,135 @@ function showSelfPaced() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        const pdfUrl = encodeURIComponent('https://serba25-jd.github.io/portofolio/blog/pdf/Analisis Etika dan Teknologi dalam Kasus Korupsi Digital di Indonesia.pdf');
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfUrl}&toolbar=0&textLayer=false&disableDownload=true`;
-        // iframe.src = pdfUrl;
-        iframe.width = '100%';
-        iframe.style.height = '100vh';
-        iframe.loading = 'lazy';
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('type', 'application/pdf');
+        const embed = document.createElement('embed');
+        const pdfUrl = encodeURIComponent('pdf/Analisis Etika dan Teknologi dalam Kasus Korupsi Digital di Indonesia.pdf');
+        embed.src = pdfUrl;
+        embed.type = 'application/pdf';
+        embed.width = '100%';
+        embed.height = '800px';
         const button = document.createElement('button');
         button.type = 'reset';
         button.textContent = 'Tutup';
         button.setAttribute('id', 'close-btn');
-        divContent.append(iframe, button);
+        divContent.append(embed, button);
         divContainer.appendChild(divContent);
         container.insertAdjacentElement('beforeend', divContainer);
         closePopup();
-        // const container = document.getElementById('container-self-paced');
-        // const divContainer = document.createElement('div');
-        // divContainer.classList.add('container-popup');
-        // divContainer.setAttribute('id', 'container-popup');
-        // divContainer.style.display = 'flex';
-        // const divContent = document.createElement('div');
-        // divContent.classList.add('content-popup');
+    })
+}
 
-        // const pdfUrl = 'https://serba25-jd.github.io/portofolio/blog/pdf/Analisis Etika dan Teknologi dalam Kasus Korupsi Digital di Indonesia.pdf';
-        // pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-
-        // // div khusus untuk menampung semua canvas
-        // const pdfContainer = document.createElement('div');
-        // pdfContainer.setAttribute('id', 'pdf-container');
-        // pdfContainer.style.display = 'flex';
-        // pdfContainer.style.flexDirection = 'column';
-        // pdfContainer.style.gap = '1rem';
-        // pdfContainer.style.overflowY = 'auto';
-        // pdfContainer.style.maxHeight = '90vh';
-
-        // divContent.append(pdfContainer);
-
-        // const button = document.createElement('button');
-        // button.type = 'reset';
-        // button.textContent = 'Tutup';
-        // button.setAttribute('id', 'close-btn');
-        // divContent.appendChild(button);
-
-        // divContainer.appendChild(divContent);
-        // container.insertAdjacentElement('beforeend', divContainer);
-
-        // pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-        //     for (let i = 1; i <= pdf.numPages; i++) {
-        //         pdf.getPage(i).then(page => {
-        //             const viewport = page.getViewport({ scale: 1.5 });
-        //             const canvas = document.createElement('canvas'); // buat canvas baru per halaman
-        //             canvas.width = viewport.width;
-        //             canvas.height = viewport.height;
-        //             pdfContainer.appendChild(canvas);
-        //             const ctx = canvas.getContext('2d');
-        //             page.render({ canvasContext: ctx, viewport: viewport });
-        //         });
-        //     }
-        // });
+function documentThree() {
+    const ketiga = document.getElementById('eye-ketiga');
+    ketiga.addEventListener('click', function() {
+        const container = document.getElementById('container-self-paced');
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('container-popup');
+        divContainer.setAttribute('id', 'container-popup');
+        divContainer.style.display = 'flex';
+        const divContent = document.createElement('div');
+        divContent.classList.add('content-popup');
+        // const embed = document.createElement('embed');
+        // const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
+        // embed.src = pdfUrl;
+        // embed.type = 'application/pdf';
+        // embed.width = '100%';
+        // embed.height = '800px';
+        const p = document.createElement('p');
+        p.textContent = 'Belum dikerjakan';
+        const button = document.createElement('button');
+        button.type = 'reset';
+        button.textContent = 'Tutup';
+        button.setAttribute('id', 'close-btn');
+        divContent.append(p, button);
+        divContainer.appendChild(divContent);
+        container.insertAdjacentElement('beforeend', divContainer);
         closePopup();
+    })
+}
 
-    });
+function documentFour() {
+    const keempat = document.getElementById('eye-keempat');
+    keempat.addEventListener('click', function() {
+        const container = document.getElementById('container-self-paced');
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('container-popup');
+        divContainer.setAttribute('id', 'container-popup');
+        divContainer.style.display = 'flex';
+        const divContent = document.createElement('div');
+        divContent.classList.add('content-popup');
+        const embed = document.createElement('embed');
+        const pdfUrl = encodeURIComponent('pdf/Analisis Yuridis Kasus Korupsi Digital di Indonesia.pdf');
+        embed.src = pdfUrl;
+        embed.type = 'application/pdf';
+        embed.width = '100%';
+        embed.height = '800px';
+        const button = document.createElement('button');
+        button.type = 'reset';
+        button.textContent = 'Tutup';
+        button.setAttribute('id', 'close-btn');
+        divContent.append(embed, button);
+        divContainer.appendChild(divContent);
+        container.insertAdjacentElement('beforeend', divContainer);
+        closePopup();
+    })
+}
+
+function documentFive() {
+    const kelima = document.getElementById('eye-kelima');
+    kelima.addEventListener('click', function() {
+        const container = document.getElementById('container-self-paced');
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('container-popup');
+        divContainer.setAttribute('id', 'container-popup');
+        divContainer.style.display = 'flex';
+        const divContent = document.createElement('div');
+        divContent.classList.add('content-popup');
+        // const embed = document.createElement('embed');
+        // const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
+        // embed.src = pdfUrl;
+        // embed.type = 'application/pdf';
+        // embed.width = '100%';
+        // embed.height = '800px';
+        const p = document.createElement('p');
+        p.textContent = 'Belum dikerjakan';
+        const button = document.createElement('button');
+        button.type = 'reset';
+        button.textContent = 'Tutup';
+        button.setAttribute('id', 'close-btn');
+        divContent.append(p, button);
+        divContainer.appendChild(divContent);
+        container.insertAdjacentElement('beforeend', divContainer);
+        closePopup();
+    })
+}
+
+function documentSix() {
+    const keenam = document.getElementById('eye-keenam');
+    keenam.addEventListener('click', function() {
+        const container = document.getElementById('container-self-paced');
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('container-popup');
+        divContainer.setAttribute('id', 'container-popup');
+        divContainer.style.display = 'flex';
+        const divContent = document.createElement('div');
+        divContent.classList.add('content-popup');
+        // const embed = document.createElement('embed');
+        // const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
+        // embed.src = pdfUrl;
+        // embed.type = 'application/pdf';
+        // embed.width = '100%';
+        // embed.height = '800px';
+        const p = document.createElement('p');
+        p.textContent = 'Belum dikerjakan';
+        const button = document.createElement('button');
+        button.type = 'reset';
+        button.textContent = 'Tutup';
+        button.setAttribute('id', 'close-btn');
+        divContent.append(p, button);
+        divContainer.appendChild(divContent);
+        container.insertAdjacentElement('beforeend', divContainer);
+        closePopup();
+    })
 }
 
 function closePopup() {

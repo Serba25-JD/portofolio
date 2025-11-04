@@ -44,15 +44,14 @@ header h1 {
 .container .self-paced-container {
     display: flex;
     gap: 2rem;
-    width: 50%;
 }
 
 .container .self-paced-container div {
-    flex: 1;
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1rem;
     background-color: var(--color-2);
     padding: 1rem;
