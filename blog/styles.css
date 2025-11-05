@@ -44,7 +44,7 @@ header h1 {
 .container .self-paced-container {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin: 2rem 0;
 }
 
 .container .self-paced-container div {
@@ -75,6 +75,7 @@ header h1 {
     cursor: pointer;
 }
 
+/* Container Popup */
 .container-popup {
     display: none;
     position: fixed;
@@ -122,6 +123,7 @@ header h1 {
     cursor: pointer;
 }
 
+/* Eye Content */
 .eye-content {
     display: flex;
     gap: 2rem;
@@ -155,6 +157,57 @@ header h1 {
 
 .eye-content div a:hover {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Footer */
+#footer-container {
+    background-color: var(--color-2);
+    padding: 1rem;
+}
+
+#footer-container p {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Popup */
+.popup-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.popup-container .popup-content {
+    background-color: var(--color-1);
+    padding: 1rem;
+    width: 20%;
+    height: 23vh;
+    text-align: center;
+    margin: auto;
+}
+
+.popup-container .popup-content p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.popup-container .popup-content #popup-content-close {
+    border: none;
+    background: none;
+    background-color: var(--color-2);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 /* Animasi */
@@ -193,6 +246,10 @@ header h1 {
     .container-popup .content-popup {
         width: 100%;
     }
+    .popup-container .popup-content {
+        width: 90%;
+        height: auto;
+    }
 }
 
 /* Tablet (601px – 900px) */
@@ -206,6 +263,10 @@ header h1 {
     }
     .container-popup .content-popup {
         width: 100%;
+    }
+    .popup-container .popup-content {
+        width: 90%;
+        height: auto;
     }
 }
 

@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function showLayout() {
     showHeader();
     showMain();
+    showFooter();
+    showPopup();
 }
 
 function showHeader() {
@@ -279,4 +281,34 @@ function closePopup() {
             }
         })
     }
+}
+
+function showFooter() {
+    const footer = document.getElementById('footer-container');
+    const p = document.createElement('p');
+    p.textContent = 'Made with ❤️: Jeremi. (2025)';
+    footer.appendChild(p);
+}
+
+function showPopup() {
+    const container = document.getElementById('container-self-paced');
+    const divContainer = document.createElement('div');
+    divContainer.classList.add('popup-container');
+    divContainer.setAttribute('id', 'popup-container');
+    const divContent = document.createElement('div');
+    divContent.classList.add('popup-content');
+    const p = document.createElement('p');
+    p.textContent = 'Sebelum melihat blog saya, harap terlebih dahulu untuk menghapus cache, agar mendapatkan data terbaru, Terima kasih. 🙏';
+    const button = document.createElement('button');
+    button.type = 'reset';
+    button.textContent = 'Saya mengerti';
+    button.setAttribute('id', 'popup-content-close');
+    divContent.append(p, button);
+    divContainer.appendChild(divContent);
+    container.insertAdjacentElement('afterend', divContainer);
+    const buttonClick = document.getElementById('popup-content-close');
+    buttonClick.addEventListener('click', function() {
+        const popupContainer = document.getElementById('popup-container');
+        popupContainer.remove();
+    })
 }
