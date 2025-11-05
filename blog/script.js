@@ -204,8 +204,8 @@ function documentFive() {
         const divDocumentContainer = document.createElement('div');
         divDocumentContainer.classList.add('eye-content');
         const listDocument = [
-            { 'judul': 'Analisis Dilema Etika', 'href': '#'},
-            { 'judul': 'Apakah whistleblowing atau tindakan melaporkan atau membocorkan dugaan pelanggaran atau kecurangan yang terjadi di dalam suatu organisasi di lingkungan kerja merupakan tindakan etis?.', 'href': '#' }
+            { 'judul': 'Analisis Dilema Etika', 'href': 'https://drive.google.com/file/d/1iy2IP1CUVNrEq4NZW7EOJ4ZwKZEyH5AN/preview'},
+            { 'judul': 'Apakah whistleblowing atau tindakan melaporkan atau membocorkan dugaan pelanggaran atau kecurangan yang terjadi di dalam suatu organisasi di lingkungan kerja merupakan tindakan etis?.', 'href': 'https://docs.google.com/presentation/d/e/2PACX-1vTDeynEODbSEQwAS2qAfudO92TR7wcyMjx-Qh3-oJslq2hCmLz6pPM9JdAkN7JjyQ/pubembed?start=true&loop=true&delayms=3000' }
         ]
         listDocument.forEach(list => {
             const divDocumentContent = document.createElement('div');
@@ -213,7 +213,8 @@ function documentFive() {
             h3.textContent = list.judul;
             const a = document.createElement('a');
             a.href = list.href;
-            a.textContent = 'Check Disini';
+            a.target = '_blank';
+            a.textContent = 'Lihat';
             divDocumentContent.append(h3, a);
             divDocumentContainer.appendChild(divDocumentContent);
         })
