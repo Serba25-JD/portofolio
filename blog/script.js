@@ -98,8 +98,7 @@ function documentFirst() {
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
         const iframe = document.createElement('iframe');
-        // const pdfUrl = encodeURIComponent('pdf/Analisis Kejujuran dan Tanggung Jawab Dalam Penggunaan Teknologi Digital di Kehidupan Sehari-hari.pdf');
-        iframe.src = 'https://docs.google.com/document/d/e/2PACX-1vSRHQMmA4SxVyrhNs7qNHjbllRunlIuJPSIG89yi4wYWbZJqqyIIpWvjZaF7UKvuflJpzRuzoNtnSyy/pub?embedded=true';
+        iframe.src = 'https://drive.google.com/file/d/1qx4orcWGXiYoDlBIYE8zP5uUF4OvLPfo/preview';
         iframe.width = '100%';
         iframe.height = '800px';
         const button = document.createElement('button');
@@ -123,12 +122,8 @@ function documentTwo() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        // const embed = document.createElement('embed');
-        // const pdfUrl = encodeURIComponent('pdf/Analisis Etika dan Teknologi dalam Kasus Korupsi Digital di Indonesia.pdf');
-        // embed.src = pdfUrl;
-        // embed.type = 'application/pdf';
         const iframe = document.createElement('iframe');
-        iframe.src = 'https://docs.google.com/document/d/e/2PACX-1vRKW3gwTlu16o_p8iv34nrS2WtmqLnRkD8d9UgUt1lZq1Ow4D4c_P7AbM1F04_DKRTZShFzeMXMmnOg/pub?embedded=true';
+        iframe.src = 'https://drive.google.com/file/d/1Cs4P_d1Glc6gFCdac67SbB3iJ5Z3cnsh/preview';
         iframe.width = '100%';
         iframe.height = '800px';
         const button = document.createElement('button');
@@ -181,12 +176,8 @@ function documentFour() {
         divContainer.style.display = 'flex';
         const divContent = document.createElement('div');
         divContent.classList.add('content-popup');
-        // const embed = document.createElement('embed');
-        // const pdfUrl = encodeURIComponent('pdf/Analisis Yuridis Kasus Korupsi Digital di Indonesia.pdf');
-        // embed.src = pdfUrl;
-        // embed.type = 'application/pdf';
         const iframe = document.createElement('iframe');
-        iframe.src = 'https://docs.google.com/document/d/e/2PACX-1vSUxQcfoSBltv-8ABp_1QoM0Q6xL2y9vccFjGLeCx65eTuuTfGt5APY3x-pwkBL1YWd-kZhya0MdO5h/pub?embedded=true';
+        iframe.src = 'https://drive.google.com/file/d/125yam0QpIghaPTiotOoI3e66QkW8-xwr/preview';
         iframe.width = '100%';
         iframe.height = '800px';
         const button = document.createElement('button');
