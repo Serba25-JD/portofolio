@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     footer.setAttribute('id', 'footer-container');
     document.body.append(header, main, footer);
     showLayout();
+    changeCache();
 });
 
 function showLayout() {
@@ -244,8 +245,8 @@ function documentSix() {
         const divDocumentContainer = document.createElement('div');
         divDocumentContainer.classList.add('eye-content');
         const listDocument = [
-            { 'judul': 'Analisis Kasus Etika Teknologi', 'href': '#'},
-            { 'judul': 'Apakah keamanan siber merupakan tanggung jawab moral atau teknis? Mahasiswa membuat argumentasi berdasarkan keempat prinsip etika TI.', 'href': '#' }
+            { 'judul': 'Analisis Kasus Etika Teknologi', 'href': 'https://drive.google.com/file/d/1b4RQK8VGJ_1ddovVDtbie6pjGR1URmRe/preview'},
+            { 'judul': 'Apakah keamanan siber merupakan tanggung jawab moral atau teknis? Mahasiswa membuat argumentasi berdasarkan keempat prinsip etika TI.', 'href': 'https://drive.google.com/file/d/1j49yi4k1RKmj9aI9sh_esIrmf6HtEAI6/preview' }
         ]
         listDocument.forEach(list => {
             const divDocumentContent = document.createElement('div');
@@ -254,6 +255,7 @@ function documentSix() {
             const a = document.createElement('a');
             a.href = list.href;
             a.textContent = 'Check Disini';
+            a.target = '_blank';
             divDocumentContent.append(h3, a);
             divDocumentContainer.appendChild(divDocumentContent);
         })
@@ -311,4 +313,14 @@ function showPopup() {
         const popupContainer = document.getElementById('popup-container');
         popupContainer.remove();
     })
+}
+
+function changeCache() {
+    const version = '20251106';
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+    link.href = link.href + '?v=' + version;
+    });
+    document.querySelectorAll('script[src]').forEach(script => {
+    script.src = script.src + '?v=' + version;
+    });
 }
