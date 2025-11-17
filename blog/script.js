@@ -63,6 +63,7 @@ function showSelfPaced() {
         { 'title': 'Pertemuan 5', 'id': 'eye-kelima', 'judul': 'Tugas 1: Analisis Dilema Etika. Tugas 2: Diskusi Kelompok.' },
         { 'title': 'Pertemuan 6', 'id': 'eye-keenam', 'judul': 'Tugas 1: Analisis Kasus Etika Teknologi. Tugas 2: Diskusi topik.'},
         { 'title': 'Pertemuan 7', 'id': 'eye-ketujuh', 'judul': 'Menegakkan Integritas Digital di Era AI dan Disinformasi.'},
+        { 'title': 'Pertemuan 8', 'id': 'eye-kedelapan', 'judul': 'Ujian Tengah Semester.'}
     ]
     listData.forEach(data => {
         const divContent = document.createElement('div');
@@ -147,6 +148,13 @@ const popupData = [
         type: 'iframe',
         documents: [
             { src: 'https://drive.google.com/file/d/1JmnNDh3sw_EaYJb3Jznb3eFMSf6b0nfv/preview' }
+        ]
+    },
+    {
+        id: 'eye-kedelapan',
+        type: 'iframe',
+        documents: [
+            { src: 'https://drive.google.com/file/d/1AuLwAHyc3vzCkHwd1676_Nxqk5vRTlZT/preview' }
         ]
     }
 ];
@@ -252,7 +260,7 @@ function showPopup() {
 }
 
 function changeCache() {
-    const version = '20251114';
+    const version = '20251117';
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
     link.href = link.href + '?v=' + version;
     });
