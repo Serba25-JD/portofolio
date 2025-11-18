@@ -63,7 +63,8 @@ function showSelfPaced() {
         { 'title': 'Pertemuan 5', 'id': 'eye-kelima', 'judul': 'Tugas 1: Analisis Dilema Etika. Tugas 2: Diskusi Kelompok.' },
         { 'title': 'Pertemuan 6', 'id': 'eye-keenam', 'judul': 'Tugas 1: Analisis Kasus Etika Teknologi. Tugas 2: Diskusi topik.'},
         { 'title': 'Pertemuan 7', 'id': 'eye-ketujuh', 'judul': 'Menegakkan Integritas Digital di Era AI dan Disinformasi.'},
-        { 'title': 'Pertemuan 8', 'id': 'eye-kedelapan', 'judul': 'Ujian Tengah Semester.'}
+        { 'title': 'Pertemuan 8', 'id': 'eye-kedelapan', 'judul': 'Ujian Tengah Semester.'},
+        { 'title': 'Pertemuan 9', 'id': 'eye-kesembilan', 'judul': 'Tugas 1: Analisis Kasus Korupsi Digital. Tugas 2: Tugas Kelompok: Simulasi Tender Etis.'},
     ]
     listData.forEach(data => {
         const divContent = document.createElement('div');
@@ -120,7 +121,7 @@ const popupData = [
         type: 'list',
         documents: [
             { 
-                judul: 'Analisis Dilema Etika', 
+                judul: 'Analisis Dilema Etika.', 
                 href: 'https://drive.google.com/file/d/1iy2IP1CUVNrEq4NZW7EOJ4ZwKZEyH5AN/preview' 
             },
             { 
@@ -134,7 +135,7 @@ const popupData = [
         type: 'list',
         documents: [
             { 
-                judul: 'Analisis Kasus Etika Teknologi', 
+                judul: 'Analisis Kasus Etika Teknologi.', 
                 href: 'https://drive.google.com/file/d/1b4RQK8VGJ_1ddovVDtbie6pjGR1URmRe/preview' 
             },
             { 
@@ -156,7 +157,21 @@ const popupData = [
         documents: [
             { src: 'https://drive.google.com/file/d/1AuLwAHyc3vzCkHwd1676_Nxqk5vRTlZT/preview' }
         ]
-    }
+    },
+    {
+        id: 'eye-kesembilan',
+        type: 'list',
+        documents: [
+            { 
+                judul: 'Analisis Kasus Korupsi Digital.', 
+                href: 'https://drive.google.com/file/d/1ZB0iu0Y8fUF34HMqLsWm9J-aAbK8qTEK/preview' 
+            },
+            { 
+                judul: 'Tugas Kelompok: Simulasi Tender Etis.', 
+                href: '' 
+            }
+        ]
+    },
 ];
 
 function createContainer(data) {
