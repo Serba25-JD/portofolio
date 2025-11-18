@@ -275,7 +275,7 @@ function showPopup() {
 }
 
 function changeCache() {
-    const version = '20251117';
+    const version = '20251118';
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
     link.href = link.href + '?v=' + version;
     });
