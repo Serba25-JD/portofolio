@@ -263,7 +263,6 @@ function showLogin() {
     input.minLength = '1';
     input.maxLength = '12';
     input.name = 'password';
-    input.placeholder = 'masukkan kode mata kuliah';
     const button = document.createElement('button');
     button.setAttribute('id', 'login-button');
     button.type = 'submit';
