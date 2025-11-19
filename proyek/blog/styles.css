@@ -171,42 +171,73 @@ header h1 {
     text-align: center;
 }
 
-/* Popup */
-.popup-container {
+/* Login */
+#login-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
-    width: 100%;
-    height: auto;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
+    right: 0;
+    width: 100%;
 }
 
-.popup-container .popup-content {
+#login-content {
     background-color: var(--color-1);
     padding: 1rem;
     width: 20%;
-    height: 23vh;
-    text-align: center;
-    margin: auto;
+    height: auto;
 }
 
-.popup-container .popup-content p {
+#login-content p {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
-.popup-container .popup-content #popup-content-close {
+#login-content label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#login-content input {
     border: none;
     background: none;
-    background-color: var(--color-2);
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
-    cursor: pointer;
+    outline: none;
+    background-color: var(--color-4);
+    border: 0.1rem solid var(--color-3);
+}
+
+#login-content input[type=password] {
+    padding: 0.2rem 0.5rem;
     font-size: 1rem;
+    font-weight: 100;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#login-content input[type=password]:focus {
+  background-color: var(--color-2);
+}
+
+#login-content button {
+    border: none;
+    background: none;
+    margin-top: 1rem;
+    background-color: var(--color-2);
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+#login-content #login-error {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -246,9 +277,8 @@ header h1 {
     .container-popup .content-popup {
         width: 100%;
     }
-    .popup-container .popup-content {
+    #login-content {
         width: 90%;
-        height: auto;
     }
 }
 
@@ -264,9 +294,8 @@ header h1 {
     .container-popup .content-popup {
         width: 100%;
     }
-    .popup-container .popup-content {
+    #login-content {
         width: 90%;
-        height: auto;
     }
 }
 

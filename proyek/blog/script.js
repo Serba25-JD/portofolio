@@ -1,12 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const favicon = document.createElement('link');
     favicon.rel = 'icon';
-    favicon.href = '../assets/image/main/icon.ico';
+    favicon.href = '../../assets/image/main/icon.ico';
     favicon.sizes = '48x48';
     const style = document.createElement('link');
     style.rel = 'stylesheet';
     style.href = 'styles.css';
     document.head.append(favicon, style);
+    changeCache();
+    showLogin();
+});
+
+function showLayout() {
     const header = document.createElement('header');
     header.setAttribute('id', 'header-container');
     const main = document.createElement('main');
@@ -14,15 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const footer = document.createElement('footer');
     footer.setAttribute('id', 'footer-container');
     document.body.append(header, main, footer);
-    showLayout();
-    changeCache();
-});
+    showLoadLayout();
+}
 
-function showLayout() {
+function showLoadLayout() {
     showHeader();
     showMain();
     showFooter();
-    showPopup();
 }
 
 function showHeader() {
@@ -244,6 +247,59 @@ function closePopup() {
     }
 }
 
+function showLogin() {
+    const body = document.querySelector('body');
+    const divContainer = document.createElement('div');
+    divContainer.setAttribute('id', 'login-container');
+    const divContent = document.createElement('div');
+    divContent.setAttribute('id', 'login-content');
+    const pTitleContent = document.createElement('p');
+    pTitleContent.textContent = 'Blog ini hanya dapat dilihat oleh Bapak Rahmadani, S.Kom., M.Kom.';
+    const label = document.createElement('label');
+    label.textContent = 'Password';
+    const input = document.createElement('input');
+    input.setAttribute('id', 'password');
+    input.type = 'password';
+    input.minLength = '1';
+    input.maxLength = '12';
+    input.name = 'password';
+    input.placeholder = 'masukkan kode mata kuliah';
+    const button = document.createElement('button');
+    button.setAttribute('id', 'login-button');
+    button.type = 'submit';
+    button.textContent = 'Login';
+    divContent.append(pTitleContent, label, input, button);
+    divContainer.appendChild(divContent);
+    body.appendChild(divContainer);
+    showLoadLogin();
+}
+
+function showLoadLogin() {
+    const button = document.getElementById('login-button');
+    const container = document.getElementById('login-container');
+    button.addEventListener('click', function() {
+        const password = 'TIF437230103';
+        const passwordInput = document.getElementById('password').value;
+        let error = document.getElementById('login-error');
+        if(!error) {
+            error = document.createElement('p');
+            error.setAttribute('id', 'login-error');
+            button.insertAdjacentElement('afterend', error);
+        }
+        if(!passwordInput) {
+            error.textContent = 'Silahkan masukkan password terlebih dahulu.';
+            return;
+        }
+        if(passwordInput !== password) {
+            error.textContent = 'Password salah.';
+            return;
+        }
+        error.remove();
+        showLayout();
+        container.remove();
+    })
+}
+
 function showFooter() {
     const footer = document.getElementById('footer-container');
     const p = document.createElement('p');
@@ -251,31 +307,8 @@ function showFooter() {
     footer.appendChild(p);
 }
 
-function showPopup() {
-    const container = document.getElementById('container-self-paced');
-    const divContainer = document.createElement('div');
-    divContainer.classList.add('popup-container');
-    divContainer.setAttribute('id', 'popup-container');
-    const divContent = document.createElement('div');
-    divContent.classList.add('popup-content');
-    const p = document.createElement('p');
-    p.textContent = 'Sebelum melihat blog saya, harap terlebih dahulu untuk menghapus cache, agar mendapatkan data terbaru, Terima kasih. 🙏';
-    const button = document.createElement('button');
-    button.type = 'reset';
-    button.textContent = 'Saya mengerti';
-    button.setAttribute('id', 'popup-content-close');
-    divContent.append(p, button);
-    divContainer.appendChild(divContent);
-    container.insertAdjacentElement('afterend', divContainer);
-    const buttonClick = document.getElementById('popup-content-close');
-    buttonClick.addEventListener('click', function() {
-        const popupContainer = document.getElementById('popup-container');
-        popupContainer.remove();
-    })
-}
-
 function changeCache() {
-    const version = '20251118';
+    const version = '20251119';
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
     link.href = link.href + '?v=' + version;
     });
