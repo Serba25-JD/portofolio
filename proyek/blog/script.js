@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const favicon = document.createElement('link');
-    favicon.rel = 'icon';
-    favicon.href = '../../assets/image/main/icon.ico';
-    favicon.sizes = '48x48';
-    const style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.href = 'styles.css';
-    document.head.append(favicon, style);
+    // const favicon = document.createElement('link');
+    // favicon.rel = 'icon';
+    // favicon.href = '../../assets/image/main/icon.ico';
+    // favicon.sizes = '48x48';
+    // const style = document.createElement('link');
+    // style.rel = 'stylesheet';
+    // style.href = 'styles.css';
+    // document.head.append(favicon, style);
     changeCache();
     showLogin();
 });

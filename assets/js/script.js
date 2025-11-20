@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Favicon
-    const favicon = document.createElement('link');
-    favicon.rel = 'icon';
-    favicon.href = 'assets/image/main/icon.ico';
-    favicon.sizes = '48x48';
-    // Styles
-    const styles = document.createElement('link');
-    styles.rel = 'stylesheet';
-    styles.href = 'assets/css/styles.css';
-    // Responsive
-    const responsive = document.createElement('link');
-    responsive.rel = 'stylesheet';
-    responsive.href = 'assets/css/responsive.css';
-    setTimeout(() => {
-        document.head.append(styles, responsive, favicon);
-    }, 10);
+    // // Favicon
+    // const favicon = document.createElement('link');
+    // favicon.rel = 'icon';
+    // favicon.href = 'assets/image/main/icon.ico';
+    // favicon.sizes = '48x48';
+    // // Styles
+    // const styles = document.createElement('link');
+    // styles.rel = 'stylesheet';
+    // styles.href = 'assets/css/styles.css';
+    // // Responsive
+    // const responsive = document.createElement('link');
+    // responsive.rel = 'stylesheet';
+    // responsive.href = 'assets/css/responsive.css';
+    // setTimeout(() => {
+    //     document.head.append(styles, responsive, favicon);
+    // }, 10);
     const body = document.getElementById('body-content');
     const header = document.createElement('header');
     header.setAttribute('id', 'header-content');
