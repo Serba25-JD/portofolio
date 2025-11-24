@@ -79,7 +79,6 @@ function showSelfPaced() {
         icon.setAttribute('data-feather', 'eye');
         icon.setAttribute('id', data.id);
         icon.classList.add('eye-icon');
-        icon.classList.add('eye-icon');
         divContent.append(h2, p, icon);
         divContainer.appendChild(divContent);
     });
