@@ -231,7 +231,7 @@ const data = [
     {
         'title': 'Pertemuan 14',
         'text': 'Menganalisis Dilema Etika yang Muncul dengan Mengacu Pada Teori Etika. [2]',
-        'src': 'https://drive.google.com/file/d/1yqylKNQ1KTNY4lIqUNBOQgcnwjXHbbWu/view?usp=sharing'
+        'src': 'https://drive.google.com/file/d/1yqylKNQ1KTNY4lIqUNBOQgcnwjXHbbWu/preview'
     }
 ];
 
