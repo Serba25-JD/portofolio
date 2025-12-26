@@ -48,7 +48,7 @@ function showLoadLogin() {
     const button = document.getElementById('login-button');
     const container = document.getElementById('login-container');
     button.addEventListener('click', function() {
-        const password = 'TIF437230103';
+        const password = '2';
         const passwordInput = document.getElementById('password').value;
         let error = document.getElementById('login-error');
         if(!error) {
@@ -210,13 +210,13 @@ const data = [
     },
     {
         'title': 'Pertemuan 11',
-        'text': 'Merancang Mockup Dashboard Digital untuk Memantau Proyek TI secara transparan.',
-        'src': '#'
+        'text': 'Merancang Mockup Dashboard Digital untuk Memantau Proyek TI Secara Transparan.',
+        'src': 'https://selfpaced.my.canva.site/'
     },
     {
         'title': 'Pertemuan 12',
         'text': 'Menganalisis Satu Kasus Nyata Pelanggaran Etika Profesional TI.',
-        'src': '#'
+        'src': 'https://drive.google.com/file/d/11Rcdvx13m5Cn-cNLKUehqjg-tv8didXJ/preview'
     },
     {
         'title': 'Pertemuan 13',
@@ -226,12 +226,12 @@ const data = [
     {
         'title': 'Pertemuan 14',
         'text': 'Keberanian Moral dalam Sistem Whistleblowing: Studi Kasus dan Refleksi Etika. [1]',
-        'src': '#'
+        'src': 'https://drive.google.com/file/d/1Jmlxlwhhe1PlyF-nJ5YbFnYeOGrHXPYs/preview'
     },
     {
         'title': 'Pertemuan 14',
         'text': 'Menganalisis Dilema Etika yang Muncul dengan Mengacu Pada Teori Etika. [2]',
-        'src': '#'
+        'src': 'https://drive.google.com/file/d/1yqylKNQ1KTNY4lIqUNBOQgcnwjXHbbWu/view?usp=sharing'
     }
 ];
 
@@ -278,7 +278,7 @@ function loadFooter() {
 };
 
 function changeCache() {
-    const version = '20251204';
+    const version = '20251226';
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
     link.href = link.href + '?v=' + version;
     });
