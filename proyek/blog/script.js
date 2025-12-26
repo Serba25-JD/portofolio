@@ -48,7 +48,7 @@ function showLoadLogin() {
     const button = document.getElementById('login-button');
     const container = document.getElementById('login-container');
     button.addEventListener('click', function() {
-        const password = '2';
+        const password = 'TIF437230103';
         const passwordInput = document.getElementById('password').value;
         let error = document.getElementById('login-error');
         if(!error) {
