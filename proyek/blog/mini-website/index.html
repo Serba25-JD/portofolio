@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Integrity in Technology </title>
+    <link rel="icon" href="../../../assets/image/main/icon.ico" sizes="48x48">
+</head>
+<body class="font-[Open_Sans] size-auto text-base bg-slate-100" id="body">
+    <header class="bg-slate-900 text-white px-8 py-4 flex items-center justify-between">
+        <h1 class="font-bold text-2xl"> Integritas Dalam Teknologi </h1>
+        <button class="dark-btn cursor-pointer" onclick="toggleDark()">🌙</button>
+    </header>
+
+    <main class="text-black p-8 flex flex-wrap gap-2 justify-center">
+        <section class="flex items-center justify-center text-center py-20 px-4 text-3xl flex-col flex-auto">
+            <blockquote class="font-semibold text-slate-600 text-xl italic" id="quote">
+                “ Teknologi tanpa integritas hanyalah alat, bukan solusi. ”
+            </blockquote>
+        </section>
+        <section class="bg-blue-900 shadow-2xl mb-5 p-5 text-white text-center text-lg/8 rounded-xl">
+            <h2 class="text-center font-extrabold mb-4"> Apa itu Integritas Digital ? </h2>
+            <p class="font-medium"> Integritas digital adalah sikap jujur, bertanggung jawab, dan etis dalam penggunaan serta pengembangan teknologi informasi untuk mencegah penyalahgunaan dan praktik korupsi digital.
+            </p>
+        </section>
+        <section class="bg-blue-900 shadow-2xl mb-5 p-5 text-white text-center text-lg/8 rounded-xl">
+            <h2 class="text-center font-extrabold mb-4"> Masalah Etika & Korupsi di Dunia I </h2>
+            <ul class="list-decimal list-inside text-left space-y-2 font-medium">
+                <li>Penyalahgunaan data pribadi</li>
+                <li>Manipulasi sistem dan informasi</li>
+                <li>Plagiarisme kode dan software ilegal</li>
+                <li>Korupsi dalam proyek teknologi</li>
+            </ul>
+        </section>
+        <section class="bg-blue-900 shadow-2xl mb-5 p-5 text-white text-center text-lg/8 rounded-xl flex-1">
+            <h2 class="text-center font-extrabold mb-4"> Nilai Anti Korupsi dalam IT </h2>
+            <ul class="grid md:grid-cols-2 gap-4 text-left text-black font-medium">
+              <li class="bg-white p-4 rounded">✔ Kejujuran</li>
+              <li class="bg-white p-4 rounded">✔ Transparansi</li>
+              <li class="bg-white p-4 rounded">✔ Tanggung Jawab</li>
+              <li class="bg-white p-4 rounded">✔ Keadilan</li>
+            </ul>
+        </section>
+        <section class="bg-blue-900 shadow-2xl mb-5 p-5 text-white text-center text-lg/8 rounded-xl flex-1">
+            <h2 class="text-center font-extrabold mb-4"> Aksi Nyata Mahasiswa IT </h2>
+            <ol class="list-decimal list-inside text-left space-y-2 font-medium">
+                <li>Menggunakan software legal</li>
+                <li>Menghargai privasi pengguna</li>
+                <li>Tidak melakukan kecurangan akademik</li>
+                <li>Mengembangkan sistem yang etis</li>
+            </ol>
+            <button onclick="commit()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mt-2 cursor-pointer"> Saya Berkomitmen </button>
+            <p id="result" class="mt-4 font-semibold text-center"></p>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-white text-center py-4">
+        <p class="font-medium"> Mini Website © 2025 </p>
+    </footer>
+    
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script>
+    function toggleDark() {
+        document.getElementById('body').classList.toggle('bg-slate-900');
+        document.getElementById('body').classList.toggle('text-white');
+        document.getElementById('quote').classList.toggle('text-white');
+    };
+    function commit() {
+      document.getElementById('result').textContent =
+        'Terima kasih! Anda telah berkomitmen menjunjung integritas digital 🤝';
+    };
+</script>
+</body>
+</html>

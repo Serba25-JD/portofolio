@@ -232,6 +232,11 @@ const data = [
         'title': 'Pertemuan 14',
         'text': 'Menganalisis Dilema Etika yang Muncul dengan Mengacu Pada Teori Etika. [2]',
         'src': 'https://drive.google.com/file/d/1yqylKNQ1KTNY4lIqUNBOQgcnwjXHbbWu/preview'
+    },
+    {
+        'title': 'Pertemuan 15',
+        'text': 'Proyek Kampanye Digital “Integrity in Technology". [1]',
+        'src': 'mini-website'
     }
 ];
 
