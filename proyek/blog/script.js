@@ -283,7 +283,7 @@ function loadFooter() {
 };
 
 function changeCache() {
-    const version = '20251226';
+    const version = '20251229';
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
     link.href = link.href + '?v=' + version;
     });
