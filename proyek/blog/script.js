@@ -237,6 +237,11 @@ const data = [
         'title': 'Pertemuan 15',
         'text': 'Proyek Kampanye Digital “Integrity in Technology". [1]',
         'src': 'mini-website'
+    },
+    {
+        'title': 'Pertemuan 16',
+        'text': 'Ujian Akhir Semester',
+        'src': 'https://drive.google.com/file/d/1UdDnJuZXejfmmVjO9ZcTvuR0SSCY0Uqm/preview'
     }
 ];
 
@@ -283,7 +288,7 @@ function loadFooter() {
 };
 
 function changeCache() {
-    const version = '20251229';
+    const version = '20260109';
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
     link.href = link.href + '?v=' + version;
     });
