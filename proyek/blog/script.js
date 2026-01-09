@@ -239,8 +239,13 @@ const data = [
         'src': 'mini-website'
     },
     {
+        'title': 'Pertemuan 15',
+        'text': 'Infografis Pentingnya Nilai Integritas dan Etika TI. [2]',
+        'src': 'https://drive.google.com/file/d/1TxoKy3VSn-akzVyoEZ9fuPDip4HRwUNu/preview'
+    },
+    {
         'title': 'Pertemuan 16',
-        'text': 'Ujian Akhir Semester',
+        'text': 'Ujian Akhir Semester.',
         'src': 'https://drive.google.com/file/d/1UdDnJuZXejfmmVjO9ZcTvuR0SSCY0Uqm/preview'
     }
 ];
