@@ -1,20 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // // Favicon
-    // const favicon = document.createElement('link');
-    // favicon.rel = 'icon';
-    // favicon.href = 'assets/image/main/icon.ico';
-    // favicon.sizes = '48x48';
-    // // Styles
-    // const styles = document.createElement('link');
-    // styles.rel = 'stylesheet';
-    // styles.href = 'assets/css/styles.css';
-    // // Responsive
-    // const responsive = document.createElement('link');
-    // responsive.rel = 'stylesheet';
-    // responsive.href = 'assets/css/responsive.css';
-    // setTimeout(() => {
-    //     document.head.append(styles, responsive, favicon);
-    // }, 10);
     const body = document.getElementById('body-content');
     const header = document.createElement('header');
     header.setAttribute('id', 'header-content');
@@ -25,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     body.append(header, main, footer);
     showAllLayout();
 });
-
-let isActiveNav = false;
 
 function showAllLayout() {
     showMainHeader();
@@ -77,6 +59,7 @@ function showMainHeader() {
     activeNav();
 }
 
+let isActiveNav = false;
 function activeNav() {
     const nav = document.querySelectorAll('.list-nav');
     nav.forEach(link => {
@@ -180,35 +163,6 @@ function showMainHeaderMobile() {
     menuImg.loading = 'lazy';
     menuImg.id = 'menu';
     section.appendChild(menuImg);
-    // const links = [
-    //     { 'url': 'https://www.instagram.com/je.onlyone_'},
-    //     { 'url': 'https://github.com/Serba25-JD'},
-    //     { 'url': 'https://discord.com/users/jeremi_salvatores'}
-    // ]
-    // links.forEach(link => {
-    //     const a = document.createElement('a');
-    //     a.href = link.url;
-    //     a.target = '_blank';
-    //     a.rel = 'noopener noreferrer';
-    // });
-    // const images = [
-    //     {'src': 'assets/image/main/instagram.svg'},
-    //     {'src': 'assets/image/main/github.svg'},
-    //     {'src': 'assets/image/main/discord.svg'},
-    //     {'src': 'assets/image/main/menu.svg'},
-    // ];
-    // images.forEach(image => {
-    //     const img = new Image();
-    //     img.src = image.src;
-    //     img.width = 24;
-    //     img.height = 24;
-    //     img.loading = 'lazy';
-    //     if (image.src.includes('menu.svg')) {
-    //         img.id = 'menu';
-    //     };
-    // const sectionContainer = document.getElementById('mobile-nav');
-    // sectionContainer.appendChild(img);
-    // });
     showHeaderMobile();
 }
 
@@ -370,18 +324,6 @@ function showMainEducationsLoad() {
     const h2 = document.createElement('h2');
     h2.textContent = 'Pendidikan Saya';
     educations.appendChild(h2);
-    // const data = [{'text': 'SMK Swasta Eka Prasetya', 'title': 'Teknik Komputer dan Jaringan', }, {'text': 'Universitas Pancabudi', 'title': 'S1 Teknologi Informasi'}]
-    // data.forEach(item => {
-    //     const details = document.createElement('details');
-    //     const sumarry = document.createElement('summary');
-    //     sumarry.textContent = item.text;
-    //     const p = document.createElement('p');
-    //     p.textContent = item.title;
-    //     details.appendChild(sumarry);
-    //     details.appendChild(p);
-    //     educations.appendChild(details);
-    //     showMainExperiences();
-    // })
     const data = [
         {'title': 'SMK Swasta Eka Prasetya', 'src': 'assets/image/svg-icon/chevron-down.svg', 'width': '24', 'height': '24', 'id': 'senior-high-school'},
         {'title': 'Universitas Pancabudi', 'src': 'assets/image/svg-icon/chevron-down.svg', 'width': '24', 'height': '24', 'id': 'university'}
