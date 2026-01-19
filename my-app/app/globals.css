@@ -33,23 +33,25 @@ body {
 
 /* Header */
 #header-content {
-    position: fixed;
-    overflow: scroll;
-    height: 100vh;
-    top: 0;
-    z-index: 99999;
-    width: 20%;
-    left: 20rem;
-    background-color: var(--button);
-    display: flex;
-    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 #header-content #header-container {
+    background-color: var(--button);
+    width: 20%;
+    height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
-    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 20rem;
+    z-index: 99;
+    overflow: scroll;
 }
 
 #header-content #header-container div {
@@ -87,6 +89,7 @@ body {
     width: 100%;
     background-color: var(--button);
     padding: 1rem;
+    z-index: 99;
 }
 
 /* Main */
@@ -94,7 +97,6 @@ body {
     background-color: var(--bg);
     max-width: 50%;
     margin-left: 45rem;
-    z-index: 9999999;
 }
 
 #main-content .container {
@@ -246,7 +248,6 @@ body {
     background-color: var(--button);
     padding: 0.5rem;
     cursor: pointer;
-    z-index: 9999;
 }
 
 #main-content #works #works-nav-content .works-nav-content-puzzle {
@@ -340,19 +341,19 @@ body {
     height: auto;
     background-color: rgba(0, 0, 0, 0.7);
     animation: fadeIn 0.3s ease;
-    z-index: 9999;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     align-items: center;
     justify-content: center;
+    z-index: 999;
 }
 
 .alert-container .alert-content {
     background-color: var(--bg);
     text-align: center;
-    width: 25%;
+    width: 20%;
     height: 20vh;
     display: flex;
     flex-direction: column;
@@ -427,15 +428,12 @@ body {
     html, body {
         font-size: 60%;
     }
-    #header-content {
+    #header-content #header-container {
         left: 0;
         width: 30%;
-        background: none;
-        top: 0;
-        bottom: 0;
     }
     #header-content.active {
-        background-color: #BDC3C7;
+        background-color: var(--button);
     }
     #header-content #header-container {
         display: none;
@@ -461,6 +459,9 @@ body {
         width: 100%;
         bottom: 58px;
     }
+    .alert-container .alert-content {
+        width: 40%;
+    }
 }
 
 /* Tablet (601px – 900px) */
@@ -469,15 +470,12 @@ body {
         font-size: 80%;
         position: relative;
     }
-    #header-content {
+    #header-content #header-container {
         left: 0;
         width: 30%;
-        background: none;
-        top: 0;
-        bottom: 0;
     }
     #header-content.active {
-        background-color: #BDC3C7;
+        background-color: var(--button);
     }
     #header-content #header-container {
         display: none;
@@ -500,6 +498,9 @@ body {
         width: 100%;
         bottom: 58px;
     }
+    .alert-container .alert-content {
+        width: 40%;
+    }
 }
 
 /* Laptop (901px – 1200px) */
@@ -507,7 +508,7 @@ body {
     html, body {
         font-size: 100%;
     }
-    #header-content {
+    #header-content #header-content #header-container {
         left: 10rem;
     }
     #main-content {
