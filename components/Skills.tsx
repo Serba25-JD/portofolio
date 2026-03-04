@@ -19,7 +19,7 @@ export default function Skills() {
     return (
         <section className="flex flex-col gap-5 text-center justify-center border-l-2 border-accent pl-5 rounded-md">
             <h2 className="font-poppins font-bold text-lg border-r-10 border-l-10 border-accent rounded-md shadow-md p-2"> Keahlian Saya </h2>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-6">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
                 {skills.map(skill => (
                     <Skill key={skill.name} {...skill} />
                 ))}

@@ -14,16 +14,18 @@ export default function Header() {
                     <a href="mailto:jeremi.salvatores@gmail.com" className="font-medium text-base"> jeremi.salvatores@gmail.com </a>
                 </div>
                 <div className="flex gap-2">
-                    <div className="cursor-pointer">
-                        <Image src="/image/svg/instagram.svg" alt="Instagram" width={800} height={800} priority className="w-7 h-auto" />
-                        <a href="https://www.instagram.com/je.onlyone_"></a>
+                    <div>
+                        <a href="https://www.instagram.com/je.onlyone_">
+                            <Image src="/image/svg/instagram.svg" alt="Instagram" width={800} height={800} priority className="w-7 h-auto" />
+                        </a>
                     </div>
-                    <div className="cursor-pointer">
-                        <Image src="/image/svg/github.svg" alt="Github" width={800} height={800} priority className="w-7 h-auto" />
-                        <a href="https://github.com/Serba25-JD"></a>
+                    <div>
+                        <a href="https://github.com/Serba25-JD">
+                            <Image src="/image/svg/github.svg" alt="Github" width={800} height={800} priority className="w-7 h-auto" />
+                        </a>
                     </div>
                 </div>
-                <a href="#" className="p-2 bg-background text-center font-bold text-base rounded-lg shadow-lg w-45"> Curriculum Vitae </a>
+                <a href="https://drive.google.com/file/d/1r66oI16m0Ofppsh8YSkCT2v_Df5JbaSv/preview" className="p-2 bg-background text-center font-bold text-base rounded-lg shadow-lg w-45" target="_blank"> Curriculum Vitae </a>
             </div>
             <div className="flex-none">
                 <Image src="/image/main/profile.webp" alt="Portofolio - Junior Programmer Jeremi Salvatores Sihotang" width={651} height={1156} priority className="w-3xs md:w-40 h-auto rounded-md shadow-md"/>
