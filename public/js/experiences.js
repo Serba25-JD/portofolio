@@ -1,4 +1,5 @@
 export const experiences = [
+    { name: "Cisco Networking Academy - Introduction to Cybersecurity", image: "/image/main/cisco-cybersecurity.webp", width: 1199, height: 799 },
     { name: "Dicoding - Pemrograman JavaScript", image: "/image/main/dicoding-Javascript.webp", width: 797, height: 562 },
     { name: "Dicoding - Front-End", image: "/image/main/dicoding-Front-End.webp", width: 798, height: 568 },
     { name: "Dicoding - Financial Literacy", image: "/image/main/dicoding-Financial.webp", width: 799, height: 568 },

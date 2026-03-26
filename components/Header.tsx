@@ -7,20 +7,20 @@ export default function Header() {
                 <h1 className="font-poppins font-bold text-lg"> Portofolio - Junior Programmer </h1>
                 <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined"> contact_phone </span>
-                    <a href="tel:+6285156246765" className="font-medium text-base"> +62 851-5624-6765 </a>
+                    <a href="tel:+6285156246765" className="font-medium text-base" target="_blank"> +62 851-5624-6765 </a>
                 </div>
                 <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined"> contact_mail </span>
-                    <a href="mailto:jeremi.salvatores@gmail.com" className="font-medium text-base"> jeremi.salvatores@gmail.com </a>
+                    <a href="mailto:jeremi.salvatores@gmail.com" className="font-medium text-base" target="_blank"> jeremi.salvatores@gmail.com </a>
                 </div>
                 <div className="flex gap-2">
                     <div>
-                        <a href="https://www.instagram.com/je.onlyone_">
+                        <a href="https://www.instagram.com/je.onlyone_" target="_blank">
                             <Image src="/image/svg/instagram.svg" alt="Instagram" width={800} height={800} priority className="w-7 h-auto" />
                         </a>
                     </div>
                     <div>
-                        <a href="https://github.com/Serba25-JD">
+                        <a href="https://github.com/Serba25-JD" target="_blank">
                             <Image src="/image/svg/github.svg" alt="Github" width={800} height={800} priority className="w-7 h-auto" />
                         </a>
                     </div>
